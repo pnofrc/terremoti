@@ -83,25 +83,33 @@ class TextResource extends Resource
                             'didactic-poem' => 'Didactic Poem',
                             'epic-poetry' => 'Epic Poetry',
                         ],
-                        'THEATRE' => [
+                        'DRAMA' => [
                             'comedy' => 'Comedy',
                             'tragedy' => 'Tragedy',
                             'tragicomedy' => 'Tragicomedy',
+                        ],
+                        'TRAVEL LITERATURE & other' => [
+                            'travelogue' => 'Travelogue',
+                            'memoir' => 'Memoir',
+                            'diary' => 'Diary',
                         ]
+
                     ]),
 
 
+            Repeater::make('geological_entities')
+            ->label('Geological Entities')
+            ->schema([
                 Select::make('geological_entity_kind')
-                    ->options(
-                        [
-
-                            'volcano' => 'Volcano',
-                            'eruption' => 'Volcanic eruption',
-                            'seismic_zone' => 'Seismic zone',
-                            'earthquake' => 'Earthquake'
-                        ]
-                    )
-                    ->reactive(),
+                ->options(
+                    [
+                        'volcano' => 'Volcano',
+                        'eruption' => 'Volcanic eruption',
+                        'seismic_zone' => 'Seismic zone',
+                        'earthquake' => 'Earthquake'
+                    ]
+                )
+                ->reactive(),
 
 
                 Radio::make('real_event')
@@ -137,7 +145,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -196,7 +204,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree')
 
@@ -232,7 +240,7 @@ class TextResource extends Resource
 
                             TextInput::make('comment')
                                 ->label('Comment')
-                                ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                         ])
                         ->createItemButtonLabel('Add typology'),
 
@@ -264,7 +272,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -313,7 +321,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
                     ])
@@ -343,7 +351,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -403,7 +411,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
                     ])
@@ -446,7 +454,7 @@ class TextResource extends Resource
     
                                     TextInput::make('comment')
                                         ->label('Comment')
-                                        ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                        ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                                 ])
                                 ->createItemButtonLabel('Add typology'),
     
@@ -502,7 +510,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
 
@@ -524,7 +532,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -551,7 +559,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -586,7 +594,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -647,7 +655,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
 
@@ -912,7 +920,7 @@ class TextResource extends Resource
 
                             TextInput::make('comment')
                                 ->label('Comment')
-                                ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                         ])
                         ->createItemButtonLabel('Add typology'),
 
@@ -944,7 +952,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -993,7 +1001,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
 
@@ -1245,7 +1253,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -1270,7 +1278,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -1558,7 +1566,7 @@ class TextResource extends Resource
     
                                     TextInput::make('comment')
                                         ->label('Comment')
-                                        ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                        ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                                 ])
                                 ->createItemButtonLabel('Add typology'),
     
@@ -1619,7 +1627,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
 
@@ -1885,7 +1893,7 @@ class TextResource extends Resource
     
                                     TextInput::make('comment')
                                         ->label('Comment')
-                                        ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                        ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                                 ])
                                 ->createItemButtonLabel('Add typology'),
     
@@ -1956,7 +1964,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
 
@@ -2005,7 +2013,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add degree'),
 
@@ -2258,7 +2266,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -2283,7 +2291,7 @@ class TextResource extends Resource
 
                                 TextInput::make('comment')
                                     ->label('Comment')
-                                    ->placeholder('when quotations from historical sources are reported, use APA quotation style (parentheses)')
+                                    ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                             ])
                             ->createItemButtonLabel('Add typology'),
 
@@ -2545,7 +2553,8 @@ class TextResource extends Resource
 
                     ])
                     ->visible(fn(Get $get) => $get('geological_entity_kind') === 'earthquake' && $get('real_event') === 'fictional'),
-
+                ])
+                ->createItemButtonLabel('Add Geological Entity'),
 
                 Fieldset::make('Linguistic')
 
@@ -2632,7 +2641,7 @@ class TextResource extends Resource
                 Fieldset::make('BIBLIOGRAPHY')
                     ->schema([
                         RichEditor::make('bibliography')
-                            ->label('References (APA reference style-Bibliography)')
+                            ->label('References (MLA reference style-Bibliography)')
 
                             ->helperText('Insert here the references in extended form and in alphabetical order'),
 
