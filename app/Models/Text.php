@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Text extends Model
 {
     protected $fillable = [
-        'title', 'author', 'publication_year', 'publication_place', 'editor', 'genre',
+        'user_id','title', 'author', 'publication_year', 'publication_place', 'editor', 'genre',
         'geological_entities', 'keywords', 'metaphors', 'personifications', 'similes', 'substantives',
         'verbs_agency', 'punctuation', 'syntax', 'morphological_peculiarities', 'uncommon_typography',
         'entity_symbols', 'social_symbols', 'interpretation', 'bibliography'
@@ -76,5 +76,10 @@ class Text extends Model
         'personifications' => 'array',
         'similes' => 'array',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

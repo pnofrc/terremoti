@@ -15,6 +15,7 @@ class CreateTextsTable extends Migration
     {
         Schema::create('texts', function (Blueprint $table) {
             $table->id(); // auto incrementing ID primary key
+            $table->integer('user_id')->nullable();
             $table->string('title')->nullable();
             $table->string('author')->nullable();
             $table->string('publication_year')->nullable();
