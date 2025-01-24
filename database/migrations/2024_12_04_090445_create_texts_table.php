@@ -53,13 +53,12 @@ class CreateTextsTable extends Migration
             $table->longText('substantives')->nullable();
             $table->longText('verbs_agency')->nullable();
             $table->longText('punctuation')->nullable();
-            $table->string('syntax')->nullable();
-            $table->longText('morphological_peculiarities')->nullable();
-            $table->longText('uncommon_typography')->nullable();
-            $table->longText('entity_symbols')->nullable();
-            $table->longText('social_symbols')->nullable();
+            $table->json('syntax')->nullable();
+            $table->json('morphological_peculiarities')->nullable();
+            // $table->longText('uncommon_typography')->nullable();
+            $table->json('symbols')->nullable();
             $table->longText('interpretation')->nullable();
-            $table->longText('bibliography')->nullable();
+            $table->json('bibliography')->nullable();
             $table->timestamps(); // created_at, updated_at
         });
     }

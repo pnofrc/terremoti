@@ -10,7 +10,7 @@ class Text extends Model
         'user_id','title', 'author', 'publication_year', 'publication_place', 'editor', 'genre',
         'geological_entities', 'keywords', 'metaphors', 'personifications', 'similes', 'substantives',
         'verbs_agency', 'punctuation', 'syntax', 'morphological_peculiarities', 'uncommon_typography',
-        'entity_symbols', 'social_symbols', 'interpretation', 'bibliography'
+       'symbols', 'interpretation', 'bibliography'
     ];
 
 
@@ -75,6 +75,11 @@ class Text extends Model
         'metaphors' => 'array',
         'personifications' => 'array',
         'similes' => 'array',
+        'bibliography' =>  'array',
+        'symbols' =>  'array',
+       'morphological_peculiarities' =>  'array',
+       'syntax' =>  'array',
+       'punctuation'=>  'array',
     ];
 
     public function user()

@@ -211,6 +211,14 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                         'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
+
                                             ]),
 
                                         TextInput::make('comment')
@@ -247,6 +255,8 @@ class TextResource extends Resource
                                                 'effusive' => 'Effusive',
                                                 'complex' => 'Complex',
                                                 'caldera' => 'Caldera',
+                                                'pomice' => 'Emission of Pumice Stones',
+                                                'other' => 'Other'
                                             ]),
 
                                         TextInput::make('comment')
@@ -327,6 +337,13 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                                'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
                                             ])
                                         ,
 
@@ -417,6 +434,13 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                                'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
                                             ])
                                         ,
 
@@ -516,6 +540,13 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                                'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
                                             ])
                                         ,
 
@@ -661,6 +692,13 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                                'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
                                             ])
                                         ,
 
@@ -704,6 +742,10 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'precautionary' => 'Precautionary Principle',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities'
+                                                
                                             ])
                                             ->multiple()
                                         ,
@@ -741,6 +783,12 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -804,6 +852,10 @@ class TextResource extends Resource
                                                 'colonisers' => 'Colonisers',
                                                 'colonised_people' => 'Colonised people',
                                                 'scientists' => 'Scientists',
+                                                'nonhuman_beings' => 'Nonhuman beings',
+                                                'nonbinary_people' => 'Nonbinary people',
+                                                'patricians' => 'Patricians',
+                                                'plebeians' => 'Plebeians'
                                             ]),
 
                                         Select::make('attitude')
@@ -818,6 +870,7 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'precautionary' => 'Precautionary Principle'
                                             ])
                                             ->multiple()
                                         ,
@@ -894,6 +947,10 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'precautionary' => 'Precautionary Principle',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -1007,6 +1064,13 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                                'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
                                             ])
                                         ,
 
@@ -1051,6 +1115,12 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities'
                                             ])
                                             ->multiple()
                                         ,
@@ -1088,6 +1158,16 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -1149,6 +1229,10 @@ class TextResource extends Resource
                                                 'colonisers' => 'Colonisers',
                                                 'colonised_people' => 'Colonised people',
                                                 'scientists' => 'Scientists',
+                                                'nonhuman_beings' => 'Nonhuman beings',
+                                                'nonbinary_people' => 'Nonbinary people',
+                                                'patricians' => 'Patricians',
+                                                'plebeians' => 'Plebeians'
                                             ]),
 
                                         Select::make('attitude')
@@ -1163,6 +1247,10 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice'
                                             ])
                                             ->multiple()
                                         ,
@@ -1239,6 +1327,13 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -1253,13 +1348,18 @@ class TextResource extends Resource
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
-                                                'changes_of_the_volcanos_shape' => "Changes of the volcano's shape",
-                                                'landscape_changes' => 'Landscape changes',
+                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
+                                                'physical_landscape_changes' => 'Physical landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
-                                                'other' => 'Other',
-                                            ])
+                                                'soil_changes' => 'Soil changes',
+                                                'soil_degradation' => 'Soil degradation',
+                                                'pollution' => 'Pollution',
+                                                'sea_pollution' => 'Sea pollution',
+                                                'earthquake' => 'Earthquake'
+                                            ]
+                                            )
                                         ,
 
                                         TextInput::make('comment')
@@ -1274,17 +1374,25 @@ class TextResource extends Resource
                                         Select::make('impact')
                                             ->options([
                                                 'deaths' => 'Deaths',
-                                                'destruction_of_goods_commodities' => 'Destruction of goods/commodities',
+                                                'injuries' => 'Injuries',
+                                                'destruction_of_goods' => 'Destruction of goods/commodities',
+                                                'resource_depletion' => 'Resource depletion',
+                                                'destruction_of_dwellings' => 'Destruction of dwellings',
+                                                'destruction_of_public_buildings' => 'Destruction of public buildings',
                                                 'destruction_of_facilities' => 'Destruction of facilities',
-                                                'social_disruption' => 'Social Disruption',
+                                                'destruction_of_cultural_heritage' => 'Destruction of cultural heritage (materials and sites)',
+                                                'social_disruption' => 'Social disruption',
                                                 'trauma' => 'Trauma',
                                                 'poverty' => 'Poverty',
                                                 'harvest' => 'Harvest',
                                                 'diseases' => 'Diseases',
-                                                'depopulation_relocation' => 'Depopulation Relocation',
+                                                'depopulation' => 'Depopulation',
+                                                'repopulation' => 'Repopulation',
+                                                'relocation' => 'Relocation',
                                                 'forced_relocation' => 'Forced Relocation',
-                                                'other' => 'other'
-                                            ])
+                                                'recovery' => 'Recovery'
+                                            ]
+                                            )
                                         ,
 
                                         TextInput::make('comment')
@@ -1324,6 +1432,7 @@ class TextResource extends Resource
                                                 'hindrance' => 'Hindrance',
                                                 'solidarity' => 'Solidarity',
                                                 'self_absorption' => 'Self-absorption',
+                                                'loss_of_consciousness' => 'Loss of consciousness'
                                             ])
                                             ->multiple()
                                         ,
@@ -1371,6 +1480,9 @@ class TextResource extends Resource
                                                 'survival_instinct' => 'Survival instinct',
                                                 'euphoria' => 'Euphoria',
                                                 'dysphoria' => 'Dysphoria',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -1633,6 +1745,13 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                                'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
                                             ])
                                         ,
 
@@ -1678,6 +1797,9 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'precautionary' => 'Precautionary Principle',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities'
                                             ])
                                             ->multiple()
                                         ,
@@ -1688,7 +1810,7 @@ class TextResource extends Resource
 
 
                                 Repeater::make('affects_individual')
-                                    ->label('What are the individual affects towards seismic  risk?')
+                                    ->label('What are the individual affects towards seismic risk?')
                                     ->schema([
                                         TextInput::make('name'),
 
@@ -1715,6 +1837,12 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'precautionary' => 'Precautionary Principle',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -1776,6 +1904,10 @@ class TextResource extends Resource
                                                 'colonisers' => 'Colonisers',
                                                 'colonised_people' => 'Colonised people',
                                                 'scientists' => 'Scientists',
+                                                'nonhuman_beings' => 'Nonhuman beings',
+                                                'nonbinary_people' => 'Nonbinary people',
+                                                'patricians' => 'Patricians',
+                                                'plebeians' => 'Plebeians'
                                             ]),
 
                                         Select::make('attitude')
@@ -1790,6 +1922,7 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'precautionary' => 'Precautionary Principle'
                                             ])
                                             ->multiple()
                                         ,
@@ -1866,6 +1999,9 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -1970,6 +2106,13 @@ class TextResource extends Resource
                                                 'sea-coast' => 'Sea coast',
                                                 'river-shores' => 'River shores',
                                                 'lake-shores' => 'Lake shores',
+                                                'public-sites' => 'Public buildings and sites',
+                                                'religious-sites' => 'Religious buildings and sites',
+                                                'cultural-sites'  => 'Cultural heritage sites',
+                                                'tourist-places'  => 'Tourist places',
+                                                'correctional-facilities'  => 'Correctional facilities',
+                                                'agricultural-areas' => 'Agriculture areas',
+                                                'farming-areas'  => 'Farming areas'
                                             ])
                                         ,
 
@@ -1979,54 +2122,54 @@ class TextResource extends Resource
                                     ])
                                     ->createItemButtonLabel('Add degree'),
 
-                                Repeater::make('degree_anthropization')
-                                    ->label('Degree of Anthropization')
-                                    ->helperText('(mentioned in historical sources, the media, scientific databases and websites)')
-                                    ->schema([
-                                        Select::make('attitude')
-                                            ->options([
-                                                'remote-dwellings' => 'Remote dwellings',
-                                                'huts' => 'Huts',
-                                                'shelters' => 'Shelters',
-                                                'houses' => 'Houses',
-                                                'villas' => 'Villas',
-                                                'country-houses' => 'Country houses',
-                                                'factories' => 'Factories',
-                                                'shops' => 'Shops',
-                                                'company-premises' => 'Company Premises',
-                                                'offices' => 'Offices',
-                                                'facilities' => 'Facilities',
-                                                'public-buildings' => 'Public Buildings',
-                                                'temples' => 'Temples',
-                                                'churches' => 'Churches',
-                                                'schools' => 'Schools',
-                                                'hospitals' => 'Hospitals',
-                                                'streets' => 'Streets',
-                                                'squares' => 'Squares',
-                                                'arenas' => 'Arenas',
-                                                'settlements' => 'Settlements',
-                                                'villages' => 'Villages',
-                                                'towns' => 'Towns',
-                                                'cities' => 'Cities',
-                                                'metropolis' => 'Metropolis',
-                                                'megalopolis' => 'Megalopolis',
-                                                'nuclear-power-plants' => 'Nuclear power plants',
-                                                'dams' => 'Dams',
-                                                'tent-camps' => 'Tent camps',
-                                                'tent-cities' => 'Tent cities',
-                                                'slums' => 'Slums',
-                                                'heritage-sites' => 'Heritage Sites',
-                                                'sea-coast' => 'Sea coast',
-                                                'river-shores' => 'River shores',
-                                                'lake-shores' => 'Lake shores',
-                                            ])
-                                        ,
+                                // Repeater::make('degree_anthropization')
+                                //     ->label('Degree of Anthropization')
+                                //     ->helperText('(mentioned in historical sources, the media, scientific databases and websites)')
+                                //     ->schema([
+                                //         Select::make('attitude')
+                                //             ->options([
+                                //                 'remote-dwellings' => 'Remote dwellings',
+                                //                 'huts' => 'Huts',
+                                //                 'shelters' => 'Shelters',
+                                //                 'houses' => 'Houses',
+                                //                 'villas' => 'Villas',
+                                //                 'country-houses' => 'Country houses',
+                                //                 'factories' => 'Factories',
+                                //                 'shops' => 'Shops',
+                                //                 'company-premises' => 'Company Premises',
+                                //                 'offices' => 'Offices',
+                                //                 'facilities' => 'Facilities',
+                                //                 'public-buildings' => 'Public Buildings',
+                                //                 'temples' => 'Temples',
+                                //                 'churches' => 'Churches',
+                                //                 'schools' => 'Schools',
+                                //                 'hospitals' => 'Hospitals',
+                                //                 'streets' => 'Streets',
+                                //                 'squares' => 'Squares',
+                                //                 'arenas' => 'Arenas',
+                                //                 'settlements' => 'Settlements',
+                                //                 'villages' => 'Villages',
+                                //                 'towns' => 'Towns',
+                                //                 'cities' => 'Cities',
+                                //                 'metropolis' => 'Metropolis',
+                                //                 'megalopolis' => 'Megalopolis',
+                                //                 'nuclear-power-plants' => 'Nuclear power plants',
+                                //                 'dams' => 'Dams',
+                                //                 'tent-camps' => 'Tent camps',
+                                //                 'tent-cities' => 'Tent cities',
+                                //                 'slums' => 'Slums',
+                                //                 'heritage-sites' => 'Heritage Sites',
+                                //                 'sea-coast' => 'Sea coast',
+                                //                 'river-shores' => 'River shores',
+                                //                 'lake-shores' => 'Lake shores',
+                                //             ])
+                                //         ,
 
-                                        TextInput::make('comment')
-                                            ->label('Comment')
-                                            ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
-                                    ])
-                                    ->createItemButtonLabel('Add degree'),
+                                //         TextInput::make('comment')
+                                //             ->label('Comment')
+                                //             ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
+                                //     ])
+                                //     ->createItemButtonLabel('Add degree'),
 
 
                                 Radio::make('reference_seismic_risk')
@@ -2064,6 +2207,12 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities'
                                             ])
                                             ->multiple()
                                         ,
@@ -2101,6 +2250,15 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -2162,6 +2320,10 @@ class TextResource extends Resource
                                                 'colonisers' => 'Colonisers',
                                                 'colonised_people' => 'Colonised people',
                                                 'scientists' => 'Scientists',
+                                                'nonhuman_beings' => 'Nonhuman beings',
+                                                'nonbinary_people' => 'Nonbinary people',
+                                                'patricians' => 'Patricians',
+                                                'plebeians' => 'Plebeians'
                                             ]),
 
                                         Select::make('attitude')
@@ -2176,6 +2338,10 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice'
                                             ])
                                             ->multiple()
                                         ,
@@ -2252,6 +2418,13 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -2287,6 +2460,7 @@ class TextResource extends Resource
                                         Select::make('impact')
                                             ->options([
                                                 'deaths' => 'Deaths',
+
                                                 'destruction_of_goods_commodities' => 'Destruction of goods/commodities',
                                                 'destruction_of_facilities' => 'Destruction of facilities',
                                                 'social_disruption' => 'Social Disruption',
@@ -2336,6 +2510,7 @@ class TextResource extends Resource
                                                 'hindrance' => 'Hindrance',
                                                 'solidarity' => 'Solidarity',
                                                 'self_absorption' => 'Self-absorption',
+                                                'loss_of_consciousness' => 'Loss of consciousness'
                                             ])
                                             ->multiple()
                                         ,
@@ -2383,6 +2558,9 @@ class TextResource extends Resource
                                                 'survival_instinct' => 'Survival instinct',
                                                 'euphoria' => 'Euphoria',
                                                 'dysphoria' => 'Dysphoria',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'madness' => 'Madness'
                                             ])
                                             ->multiple()
                                         ,
@@ -2588,7 +2766,7 @@ class TextResource extends Resource
                             ])
                             ->createItemButtonLabel('Add Metaphor'),
 
-                        Repeater::make(name: 'personifications')
+                        Repeater::make(name: 'personi')
                             ->schema([
                                 TextInput::make('personification')
                                     ->label('Add 10/15 personifications')
@@ -2597,7 +2775,7 @@ class TextResource extends Resource
                             ])
                             ->createItemButtonLabel('Add Personification'),
 
-                        Repeater::make(name: 'simies')
+                        Repeater::make(name: 'similes')
                             ->schema([
                                 TextInput::make('similes')
                                     ->label('Add 10/15 similes')
@@ -2615,28 +2793,100 @@ class TextResource extends Resource
                             ->label('Verbs related to the characters’ agency')
                             ->helperText('predominance of active or passive forms'),
 
-                        RichEditor::make('punctuation')
-                            ->helperText('Uncommon punctuation marks (add manually); Lack of punctuation; Multiple Colons; Multiple Semicolons; Multiple commas, Multiple full stops, Multiple exclamation marks, Ellipsis; Hyphens, Dashes'),
+               
+                        Select::make('punctuation')
+                        ->multiple()
+                        ->options([
+                            'uncummon_punctuation'=>'Uncommon punctuation marks (add manually)',
+                            'lack_punctuation'=>'Lack of punctuation',
+                            'multiple_colons'=>'Multiple Colons',
+                            'multiple_semicolons'=>'Multiple Semicolons',
+                            'multiple_commas'=>'Multiple commas',
+                            'multiple_stops'=>'Multiple full stops',
+                            'multiple_exl'=>'Multiple exclamation marks',
+                            'ellipsis'=>'Ellipsis',
+                            'hypens'=>'Hyphens',
+                            'dashes'=>'Dashes',
+                            'no_peculiarities' => 'No Peculiarities'
+                        ]),
 
-                        TextInput::make('syntax')
-                            ->helperText('Linear syntax; Broken syntax'),
+                        Select::make('syntax')
+                        ->multiple()
+                        ->options([
+                            'parataxis' => 'Parataxis',
+                            'hypotaxis' => 'Hypotaxis',
+                            'simple_sentences' => 'Simple sentences',
+                            'complex_verbal_phrases' => 'Complex verbal phrases',
+                            'complex_noun_phrases' => 'Complex noun phrases',
+                            'unconventional_position' => 'Unconventional position of phrases in sentence',
+                            'high_frequency_connectives' => 'High frequency of textual connectives (coordinating conjunctions, adverbs)',
+                            'high_frequency_spoken_language' => 'High frequency of phenomena of the spoken language'
+                        ]),
+                        
 
-                        RichEditor::make('morphological_peculiarities'),
+                        Select::make('morphological_peculiarities')
+                        ->multiple()
+                        ->options([
+                            'preference_for_nouns_adjectives' => 'Preference for nouns and adjectives',
+                            'preference_for_verbs_adverbs' => 'Preference for verbs and adverbs',
+                            'high_frequency_passive_forms' => 'High frequency of passive forms',
+                            'high_frequency_abstract_neutral_indefinite' => 'High frequency of abstracts, neutral, indefinite forms',
+                            'high_frequency_spoken_language' => 'High frequency of phenomena of the spoken language'
+                        ]),
+                        
 
-                        RichEditor::make('uncommon_typography')
+
+                        Select::make('phonteics_prosody')
+                        ->label('Phonetics and prosody')
+                        ->multiple()
+                        ->options([
+                            'sound_related_word_choice' => 'Sound-related word choice (onomatopoeia, rhyme, alliteration)',
+                            'relevance_of_word_accent' => 'Relevance of word accent',
+                            'relevance_of_language_rhythm' => 'Relevance of language rhythm'
+                        ]),
+                        
+                        
 
                     ]),
 
                 Fieldset::make('SYMBOLIC/FIGURATIVE')
                     ->schema([
-                        RichEditor::make('entity_symbols')
-                            ->label('motifs, topoi, mythologemes (related to the entity/phenomenon)')
-                            ->helperText('Locus horridus; Locus amoenus; Hell; Hades; Apocalypse; Cruel Nature; Deified Nature; Pagan Gods; Indigenous deities; Biblical God; Nemesis; Fire; Fireworks; Thunder; Death; Ruins; Hyperdisaster; Nature- machine'),
-
-                        RichEditor::make('social_symbols')
-                            ->label('motifs, topoi, mythologemes
-(related to individuals / social groups / societies represented in the literary work)')
-                            ->helperText('Ideal community; Civilisation; Technocracy; Panicked mob; colonisers; colonised people; Miracles; Violation of the laws of Nature'),
+                      
+                        Select::make('symbols')
+                            ->label('Motifs, Topoi, Mythologemes')
+                            ->multiple()
+                            ->helperText('related to the entity/phenomenon and to individuals / social groups / societies represented in the literary work')
+                            ->options([
+                                'locus_horridus' => 'Locus horridus',
+                                'locus_amoenus' => 'Locus amoenus',
+                                'hell' => 'Hell',
+                                'hades' => 'Hades',
+                                'apocalypse' => 'Apocalypse',
+                                'cruel_nature' => 'Cruel Nature',
+                                'deified_nature' => 'Deified Nature',
+                                'deities' => 'Deities',
+                                'gods' => 'Gods',
+                                'nemesis' => 'Nemesis',
+                                'fire' => 'Fire',
+                                'fireworks' => 'Fireworks',
+                                'thunder' => 'Thunder',
+                                'death' => 'Death',
+                                'ruins' => 'Ruins',
+                                'hyperdisaster' => 'Hyperdisaster',
+                                'nature_machine' => 'Nature-machine',
+                                'ideal_community' => 'Ideal community',
+                                'civilisation' => 'Civilisation',
+                                'technocracy' => 'Technocracy',
+                                'panicked_mob' => 'Panicked mob',
+                                'colonisers' => 'Colonisers',
+                                'colonised_people' => 'Colonised people',
+                                'miracles' => 'Miracles',
+                                'violation_of_laws_of_nature' => 'Violation of the laws of Nature',
+                                'superstition' => 'Superstition',
+                                'prophecy' => 'Prophecy',
+                                'violation_of_taboos' => 'Violation of taboos'
+                            ]),
+                            
                     ]),
 
                 Fieldset::make('CONCEPTUAL')
@@ -2649,13 +2899,25 @@ class TextResource extends Resource
                     ]),
 
 
+                    
+
                 Fieldset::make('BIBLIOGRAPHY')
                     ->schema([
-                        RichEditor::make('bibliography')
-                            ->label('References (MLA reference style-Bibliography)')
+                        Repeater::make('bibliography')
+                                ->label('Bibliography Source')
+                                ->schema([
+                                    Select::make('source')
+                                        ->options([
+                                            'primary_sources' => 'Primary sources',
+                                            'secondary_sources' => 'Secondary sources'
+                                        ]),
+                                        
+                                    RichEditor::make('bibliography')
+                                        ->label('References (MLA reference style-Bibliography)')
+                                        ->helperText('Insert here the references in extended form and in alphabetical order'),
 
-                            ->helperText('Insert here the references in extended form and in alphabetical order'),
-
+                                ])
+                                ->createItemButtonLabel('Add bibliography'),
                     ]),
 
             ]);
