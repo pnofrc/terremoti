@@ -347,11 +347,72 @@ class TextResource extends Resource
                                             ])
                                         ,
 
+                                        
+
                                         TextInput::make('comment')
                                             ->label('Comment')
                                             ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                                     ])
                                     ->createItemButtonLabel('Add degree'),
+
+                                    Repeater::make('ecological_impact')
+                                    ->label('Ecological impact of the eruption')
+                                    ->schema([
+                                        Select::make('impact')
+                                            ->options([
+                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
+                                                'physical_landscape_changes' => 'Physical landscape changes',
+                                                'destruction_of_plants' => 'Destruction of plants',
+                                                'destruction_of_animal_species' => 'Destruction of animal species',
+                                                'atmospheric_changes' => 'Atmospheric changes',
+                                                'soil_changes' => 'Soil changes',
+                                                'soil_degradation' => 'Soil degradation',
+                                                'pollution' => 'Pollution',
+                                                'sea_pollution' => 'Sea pollution',
+                                                'earthquake' => 'Earthquake',
+                                                'other' => 'Other'
+                                             ]
+                                            )
+                                        ,
+
+                                        TextInput::make('comment')
+                                            ->label('Comment')
+                                            ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
+                                    ])
+                                    ->createItemButtonLabel('Add typology'),
+
+                                Repeater::make('social_impact')
+                                    ->label('Social impact of the eruption')
+                                    ->schema([
+                                        Select::make('impact')
+                                            ->options([
+                                                'deaths' => 'Deaths',
+                                                'injuries' => 'Injuries',
+                                                'destruction_of_goods' => 'Destruction of goods/commodities',
+                                                'resource_depletion' => 'Resource depletion',
+                                                'destruction_of_dwellings' => 'Destruction of dwellings',
+                                                'destruction_of_public_buildings' => 'Destruction of public buildings',
+                                                'destruction_of_facilities' => 'Destruction of facilities',
+                                                'destruction_of_cultural_heritage' => 'Destruction of cultural heritage (materials and sites)',
+                                                'social_disruption' => 'Social disruption',
+                                                'trauma' => 'Trauma',
+                                                'poverty' => 'Poverty',
+                                                'harvest' => 'Harvest',
+                                                'diseases' => 'Diseases',
+                                                'depopulation' => 'Depopulation',
+                                                'repopulation' => 'Repopulation',
+                                                'relocation' => 'Relocation',
+                                                'forced_relocation' => 'Forced Relocation',
+                                                'recovery' => 'Recovery'
+                                            ]
+                                            )
+                                        ,
+
+                                        TextInput::make('comment')
+                                            ->label('Comment')
+                                            ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
+                                    ])
+                                    ->createItemButtonLabel('Add typology'),
                             ])
                             ->visible(fn(Get $get) => $get('geological_entity_kind') === 'eruption' && $get('real_event') === 'real'),
 
@@ -1357,8 +1418,9 @@ class TextResource extends Resource
                                                 'soil_degradation' => 'Soil degradation',
                                                 'pollution' => 'Pollution',
                                                 'sea_pollution' => 'Sea pollution',
-                                                'earthquake' => 'Earthquake'
-                                            ]
+                                                'earthquake' => 'Earthquake',
+                                                'other' => 'Other'
+                                             ]
                                             )
                                         ,
 
@@ -1432,7 +1494,11 @@ class TextResource extends Resource
                                                 'hindrance' => 'Hindrance',
                                                 'solidarity' => 'Solidarity',
                                                 'self_absorption' => 'Self-absorption',
-                                                'loss_of_consciousness' => 'Loss of consciousness'
+                                                'loss_of_consciousness' => 'Loss of consciousness',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                             ])
                                             ->multiple()
                                         ,
@@ -1559,6 +1625,10 @@ class TextResource extends Resource
                                                 'hindrance' => 'Hindrance',
                                                 'solidarity' => 'Solidarity',
                                                 'self_absorption' => 'Self-absorption',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                             ])
                                             ->multiple()
                                         ,
@@ -2510,7 +2580,11 @@ class TextResource extends Resource
                                                 'hindrance' => 'Hindrance',
                                                 'solidarity' => 'Solidarity',
                                                 'self_absorption' => 'Self-absorption',
-                                                'loss_of_consciousness' => 'Loss of consciousness'
+                                                'loss_of_consciousness' => 'Loss of consciousness',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                             ])
                                             ->multiple()
                                         ,
@@ -2637,6 +2711,10 @@ class TextResource extends Resource
                                                 'hindrance' => 'Hindrance',
                                                 'solidarity' => 'Solidarity',
                                                 'self_absorption' => 'Self-absorption',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                             ])
                                             ->multiple()
                                         ,

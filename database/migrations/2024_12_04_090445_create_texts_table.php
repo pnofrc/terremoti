@@ -52,7 +52,7 @@ class CreateTextsTable extends Migration
             $table->json('similes')->nullable();
             $table->longText('substantives')->nullable();
             $table->longText('verbs_agency')->nullable();
-            $table->longText('punctuation')->nullable();
+            $table->json('punctuation')->nullable();
             $table->json('syntax')->nullable();
             $table->json('morphological_peculiarities')->nullable();
             // $table->longText('uncommon_typography')->nullable();
