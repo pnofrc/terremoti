@@ -35,7 +35,7 @@ class TextResource extends Resource
     {
         return $form
             ->schema([
-                select::make('user_id')    
+                Select::make('user_id')    
                     ->label('Author Entry')    
                     ->options(User::all()->pluck('name', 'id')) 
                     ->searchable() 
@@ -2916,7 +2916,7 @@ class TextResource extends Resource
 
 
                                 Repeater::make('collective_affects_general')
-                                    ->label('Collective affects/reactions to the event')
+                                    ->label('Collective reactions to the event')
                                     ->schema([
                                         Select::make('group')
                                             ->options([
