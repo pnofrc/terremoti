@@ -48,6 +48,9 @@ class TextResource extends Resource
                 TextInput::make('publication_place'),
                 TextInput::make('editor'),
 
+                TextInput::make('collection')->label('Collection'),
+                TextInput::make('magazine')->label('Journal / Magazine'),
+
 
                 Select::make('genre')
                     ->searchable()
@@ -61,7 +64,7 @@ class TextResource extends Resource
                             'philosophical-novel' => 'Philosophical novel',
                             'biographical-novel' => 'Biographical novel',
                             'autobiographical-novel' => 'Autobiographical novel',
-                            'eco-novel' => 'Eco-novel',
+                            'eco-fiction' => 'Eco-fiction',
                             'utopian-novel' => 'Utopian novel',
                             'dystopian-novel' => 'Dystopian novel',
                             'sci-fi-novel' => 'Sci-fi novel',
@@ -78,6 +81,11 @@ class TextResource extends Resource
                             'novella' => 'Novella',
                             'short-story' => 'Short story',
                             'fairy-tale' => 'Fairy tale',
+
+                            'non-fiction' => 'Non-fiction',
+                            'essay'=>'Essay',
+                            'letter'=>'Letter'
+
                         ],
                         'POETRY' => [
                             'sonnet' => 'Sonnet',
@@ -107,10 +115,10 @@ class TextResource extends Resource
 
                     ]),
 
-            Fieldset::make('Geological Entities')
+            Fieldset::make('Geological Entities and Phenomena')
             ->schema([
                 Repeater::make('geological_entities')
-                    ->label('Geological Entities')
+                    ->label('Geological Entities and Phenomena')
                     ->schema([
                         Select::make('geological_entity_kind')
                             ->options(
@@ -126,9 +134,10 @@ class TextResource extends Resource
 
 
                         Radio::make('real_event')
+                            ->label('event')
                             ->options([
                                 'real' => 'Real',
-                                'fictional' => 'Fictional',
+                                'literary' => 'Literary',
                             ])
                             ->visible(fn(Get $get) => $get('geological_entity_kind'))
                             ->reactive(),
@@ -149,7 +158,7 @@ class TextResource extends Resource
                                             ->options([
                                                 'terrestrial' => 'Terrestrial',
                                                 'submarine' => 'Submarine',
-                                                'volcano' => 'Volcano',
+                                                'stratovolcano' => 'Stratovolcano',
                                                 'explosive' => 'Explosive',
                                                 'effusive' => 'Effusive',
                                                 'complex' => 'Complex',
@@ -253,12 +262,12 @@ class TextResource extends Resource
                                             ->options([
                                                 'terrestrial' => 'Terrestrial',
                                                 'submarine' => 'Submarine',
-                                                'volcano' => 'Volcano',
+                                                'stratovolcano' => 'Stratovolcano',
                                                 'explosive' => 'Explosive',
                                                 'effusive' => 'Effusive',
                                                 'complex' => 'Complex',
                                                 'caldera' => 'Caldera',
-                                                'pomice' => 'Emission of Pumice Stones',
+                                                
                                                 'other' => 'Other'
                                             ]),
 
@@ -286,19 +295,27 @@ class TextResource extends Resource
                                     ->schema([
                                         Select::make('typology')
                                             ->options([
-                                                'effusive_eruption' => 'Effusive eruption',
-                                                'explosive_eruption' => 'Explosive eruption',
+                                                'Effusive eruption' => ['gases' => 'Gases',
+                                                'ash_rainfall' => 'Ash rainfall',
+                                                'lapilli' => 'Lapilli',
+                                                'volcanic_bombs' => 'Volcanic bombs',
+                                                'pumice_stones'=>'emission of pumice stones'],
+                                                'Explosive eruption' => ['emission_of_lava' => 'Emission of lava'],
                                                 'other' => 'other'
                                             ])->reactive(),
                                         
 
-                                        Select::make('explosive_eruption_typology')->options(
-                                                ['gases' => 'Gases',
-                                                'ash_rainfall' => 'Ash rainfall',
-                                                'lapilli' => 'Lapilli',
-                                                'volcanic_bombs' => 'Volcanic bombs',]
-                                        )->visible(fn(Get $get) => $get('typology') === 'explosive_eruption')
-                                        ,
+                                        // Select::make('explosive_eruption_typology')->options(
+                                        //         ['gases' => 'Gases',
+                                        //         'ash_rainfall' => 'Ash rainfall',
+                                        //         'lapilli' => 'Lapilli',
+                                        //         'volcanic_bombs' => 'Volcanic bombs',
+                                        //         'pumice_stones'=>'emission of pumice stones']
+                                        // )->visible(fn(Get $get) => $get('typology') === 'explosive_eruption'),
+
+                                        // Select::make('explosive_eruption_typology')->options(
+                                        //     ['emission_of_lava' => 'Emission of lava']
+                                        // )->visible(fn(Get $get) => $get('typology') === 'effusive_eruption'),
 
                                         TextInput::make('comment')
                                             ->label('Comment')
@@ -681,12 +698,12 @@ class TextResource extends Resource
 
 
 
-                        // FICTIONAL vulcano
+                        // literary vulcano
 
 
 
-                        Fieldset::make('fictional_volcano')
-                            ->label('Fictional Volcano Event')
+                        Fieldset::make('literary_volcano')
+                            ->label('Literary Volcano Event')
                             ->schema([
                                 TextInput::make('volcano_name')
                                     ->label('Name of the volcano'),
@@ -698,7 +715,7 @@ class TextResource extends Resource
                                             ->options([
                                                 'terrestrial' => 'Terrestrial',
                                                 'submarine' => 'Submarine',
-                                                'volcano' => 'Volcano',
+                                                'stratovolcano' => 'Stratovolcano',
                                                 'explosive' => 'Explosive',
                                                 'effusive' => 'Effusive',
                                                 'complex' => 'Complex',
@@ -831,7 +848,10 @@ class TextResource extends Resource
                                                 'scepticism' => 'Scepticism',
                                                 'precautionary' => 'Precautionary Principle',
                                                 'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities'
+                                                'distrust_in_authorities' => 'Distrust in authorities',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution'
                                                 
                                             ])
                                             ->multiple()
@@ -943,6 +963,9 @@ class TextResource extends Resource
                                                 'nonbinary_people' => 'Nonbinary people',
                                                 'patricians' => 'Patricians',
                                                 'plebeians' => 'Plebeians',
+                                                'eccentric' => 'Eccentric People',
+                                                'magician' => 'People with magical power',
+                                                'erudite' => 'Erudite people',
                                                 
                                             ]),
 
@@ -973,6 +996,9 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution'
                                             ])
                                             ->multiple()
                                         ,
@@ -1061,15 +1087,15 @@ class TextResource extends Resource
                                 //     ->createItemButtonLabel('Add group'),
 
                             ])
-                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'volcano' && $get('real_event') === 'fictional'),
+                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'volcano' && $get('real_event') === 'literary'),
 
 
 
 
-                        // FICTIONAL -- eruption
+                        // literary -- eruption
 
-                        Fieldset::make('fictional_eruption')
-                            ->label('Fictional Eruption Event')
+                        Fieldset::make('literary_eruption')
+                            ->label('Literary Eruption Event')
                             ->schema([
                                 TextInput::make('event_name')
                                     ->label('Name of the eruption'),
@@ -1081,7 +1107,7 @@ class TextResource extends Resource
                                             ->options([
                                                 'terrestrial' => 'Terrestrial',
                                                 'submarine' => 'Submarine',
-                                                'volcano' => 'Volcano',
+                                                'stratovolcano' => 'Stratovolcano',
                                                 'explosive' => 'Explosive',
                                                 'effusive' => 'Effusive',
                                                 'complex' => 'Complex',
@@ -1112,19 +1138,27 @@ class TextResource extends Resource
                                     ->schema([
                                         Select::make('typology')
                                             ->options([
-                                                'effusive_eruption' => 'Effusive eruption',
-                                                'explosive_eruption' => 'Explosive eruption',
+                                                'Effusive eruption' => ['gases' => 'Gases',
+                                                'ash_rainfall' => 'Ash rainfall',
+                                                'lapilli' => 'Lapilli',
+                                                'volcanic_bombs' => 'Volcanic bombs',
+                                                'pumice_stones'=>'emission of pumice stones'],
+                                                'Explosive eruption' => ['emission_of_lava' => 'Emission of lava'],
                                                 'other' => 'other'
                                             ])->reactive(),
                                         
 
-                                        Select::make('explosive_eruption_typology')->options(
-                                                ['gases' => 'Gases',
-                                                'ash_rainfall' => 'Ash rainfall',
-                                                'lapilli' => 'Lapilli',
-                                                'volcanic_bombs' => 'Volcanic bombs',]
-                                        )->visible(fn(Get $get) => $get('typology') === 'explosive_eruption')
-                                        ,
+                                        // Select::make('explosive_eruption_typology')->options(
+                                        //         ['gases' => 'Gases',
+                                        //         'ash_rainfall' => 'Ash rainfall',
+                                        //         'lapilli' => 'Lapilli',
+                                        //         'volcanic_bombs' => 'Volcanic bombs',
+                                        //         'pumice_stones'=>'emission of pumice stones']
+                                        // )->visible(fn(Get $get) => $get('typology') === 'explosive_eruption'),
+
+                                        // Select::make('explosive_eruption_typology')->options(
+                                        //     ['emission_of_lava' => 'Emission of lava']
+                                        // )->visible(fn(Get $get) => $get('typology') === 'effusive_eruption'),
 
                                         // TextInput::make('comment')
                                         //     ->label('Comment')
@@ -1244,7 +1278,17 @@ class TextResource extends Resource
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
                                                 'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities'
+                                                'distrust_in_authorities' => 'Distrust in authorities',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination'
+
+
+
                                             ])
                                             ->multiple()
                                         ,
@@ -1356,7 +1400,9 @@ class TextResource extends Resource
                                                 'nonbinary_people' => 'Nonbinary people',
                                                 'patricians' => 'Patricians',
                                                 'plebeians' => 'Plebeians',
-                                                
+                                                'eccentric' => 'Eccentric People',
+                                                'magician' => 'People with magical power',
+                                                'erudite' => 'Erudite people'
                                             ]),
 
                                         Select::make('attitude')
@@ -1386,7 +1432,10 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
-                                                'madness' => 'Madness'
+                                                'madness' => 'Madness',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution'
                                             ])
                                             ->multiple()
                                         ,
@@ -1709,6 +1758,12 @@ class TextResource extends Resource
                                                 'colonisers' => 'Colonisers',
                                                 'colonised_people' => 'Colonised people',
                                                 'scientists' => 'Scientists',
+                                                'eccentric' => 'Eccentric People',
+                                                'magician' => 'People with magical power',
+                                                'erudite' => 'Erudite people',
+                                                'patricians' => 'Patricians',
+                                                'plebeians' => 'Plebeians',
+
                                             ]),
 
                                         Select::make('attitude')
@@ -1855,15 +1910,15 @@ class TextResource extends Resource
                                     )->multiple(),
 
                             ])
-                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'eruption' && $get('real_event') === 'fictional'),
+                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'eruption' && $get('real_event') === 'literary'),
 
 
 
 
 
-                        // FICTIONAL SEISMIC
-                        Fieldset::make('fictional_seismic')
-                            ->label('Fictional Seismic zone')
+                        // literary SEISMIC
+                        Fieldset::make('literary_seismic')
+                            ->label('Literary Seismic zone')
                             ->schema([
                                 TextInput::make('event_name')
                                     ->label('Name of the seismic zone'),
@@ -2007,9 +2062,15 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
-                                                'precautionary' => 'Precautionary Principle',
                                                 'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities'
+                                                'distrust_in_authorities' => 'Distrust in authorities',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination'
                                             ])
                                             ->multiple()
                                         ,
@@ -2117,7 +2178,10 @@ class TextResource extends Resource
                                                 'nonhuman_beings' => 'Nonhuman beings',
                                                 'nonbinary_people' => 'Nonbinary people',
                                                 'patricians' => 'Patricians',
-                                                'plebeians' => 'Plebeians'
+                                                'plebeians' => 'Plebeians',
+                                                'eccentric' => 'Eccentric People',
+                                                'magician' => 'People with magical power',
+                                                'erudite' => 'Erudite people'
                                             ]),
 
                                         Select::make('attitude')
@@ -2146,7 +2210,14 @@ class TextResource extends Resource
                                                 'malaise' => 'Malaise',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness'
+                                                'madness' => 'Madness',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination'
                                             ])
                                             ->multiple()
                                         ,
@@ -2235,15 +2306,15 @@ class TextResource extends Resource
 
 
                             ])
-                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'seismic_zone' && $get('real_event') === 'fictional'),
+                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'seismic_zone' && $get('real_event') === 'literary'),
 
 
 
-                        // FICTIONAL earthquake
+                        // literary earthquake
 
 
-                        Fieldset::make('fictional_earthquake')
-                            ->label('Fictional Earthquake Event')
+                        Fieldset::make('literary_earthquake')
+                            ->label('Literary Earthquake Event')
                             ->schema([
                                 TextInput::make('event_name')
                                     ->label('Name of the earthquake'),
@@ -2452,12 +2523,15 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
                                                 'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities'
+                                                'distrust_in_authorities' => 'Distrust in authorities',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination'
                                             ])
                                             ->multiple()
                                         ,
@@ -2568,7 +2642,10 @@ class TextResource extends Resource
                                                 'nonhuman_beings' => 'Nonhuman beings',
                                                 'nonbinary_people' => 'Nonbinary people',
                                                 'patricians' => 'Patricians',
-                                                'plebeians' => 'Plebeians'
+                                                'plebeians' => 'Plebeians',
+                                                'eccentric' => 'Eccentric People',
+                                                'magician' => 'People with magical power',
+                                                'erudite' => 'Erudite people'
                                             ]),
 
                                         Select::make('attitude')
@@ -2598,13 +2675,16 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness'
+                                                'madness' => 'Madness',
+                                                'carelessness'=>'carelessness',
+                                                'recklessness'=>'recklessness',
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination'
                                             ])
                                             ->multiple()
                                         ,
@@ -2968,6 +3048,12 @@ class TextResource extends Resource
                                                 'colonisers' => 'Colonisers',
                                                 'colonised_people' => 'Colonised people',
                                                 'scientists' => 'Scientists',
+                                                'eccentric' => 'Eccentric People',
+                                                'magician' => 'People with magical power',
+                                                'erudite' => 'Erudite people',
+                                                'patricians' => 'Patricians',
+                                                'plebeians' => 'Plebeians',
+
                                             ]),
 
                                         Select::make('attitude')
@@ -3028,7 +3114,7 @@ class TextResource extends Resource
                                     )->multiple(),
 
                             ])
-                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'earthquake' && $get('real_event') === 'fictional'),
+                            ->visible(fn(Get $get) => $get('geological_entity_kind') === 'earthquake' && $get('real_event') === 'literary'),
                     ])
                     ->createItemButtonLabel('Add Geological Entity'),
                 ])->columns(1),
@@ -3074,11 +3160,11 @@ class TextResource extends Resource
 
 
                         RichEditor::make('substantives')
-                            ->label('Substantives related to the entity / phenomenon')
+                            ->label('Significant words and phrases related to the entity/phenomenon')
                             ->helperText('Hypernonyms or Hyponyms; Technical vs non-technical vocabulary; Foreign words; Loan Words, Calques; Neologisms; Archaisms'),
 
                         RichEditor::make('verbs_agency')
-                            ->label('Verbs related to the characters’ agency')
+                            ->label('Significant words and phrases related to the characters’ agency')
                             ->helperText('predominance of active or passive forms'),
 
                
@@ -3092,6 +3178,7 @@ class TextResource extends Resource
                             'multiple_commas'=>'Multiple commas',
                             'multiple_stops'=>'Multiple full stops',
                             'multiple_exl'=>'Multiple exclamation marks',
+                            'high_frequency_punctuation_marks'=>'high frequency of some particular punctuation marks',
                             'ellipsis'=>'Ellipsis',
                             'hypens'=>'Hyphens',
                             'dashes'=>'Dashes',
