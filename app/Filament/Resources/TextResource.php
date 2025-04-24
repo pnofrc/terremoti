@@ -134,7 +134,7 @@ class TextResource extends Resource
 
 
                         Radio::make('real_event')
-                            ->label('event')
+                            ->label('entity/event')
                             ->options([
                                 'real' => 'Real',
                                 'literary' => 'Literary',
@@ -294,15 +294,35 @@ class TextResource extends Resource
                                     ->label('Typology of volcanic eruption')
                                     ->schema([
                                         Select::make('typology')
-                                            ->options([
-                                                'Effusive eruption' => ['gases' => 'Gases',
-                                                'ash_rainfall' => 'Ash rainfall',
-                                                'lapilli' => 'Lapilli',
-                                                'volcanic_bombs' => 'Volcanic bombs',
-                                                'pumice_stones'=>'emission of pumice stones'],
-                                                'Explosive eruption' => ['emission_of_lava' => 'Emission of lava'],
-                                                'other' => 'other'
-                                            ])->reactive(),
+                                        ->options([
+                                            'effusive' => 'Effusive eruption',
+                                            'explosive' => 'Explosive eruption',
+                                            'other' => 'Other',
+                                        ])
+                                        ->reactive(),
+                                    
+                                    Select::make('sub_typology')
+                                        ->label('Sub-tipology (Not mandatory)')
+                                        ->options(function (callable $get) {
+                                            $typology = $get('typology');
+                                    
+                                            return match ($typology) {
+                                                'effusive' => [
+                                                    'gases' => 'Gases',
+                                                    'ash_rainfall' => 'Ash rainfall',
+                                                    'lapilli' => 'Lapilli',
+                                                    'volcanic_bombs' => 'Volcanic bombs',
+                                                    'pumice_stones' => 'Emission of pumice stones',
+                                                ],
+                                                'explosive' => [
+                                                    'emission_of_lava' => 'Emission of lava',
+                                                ],
+                                                default => [],
+                                            };
+                                        })
+                                        ->reactive()
+                                        ->visible(fn (callable $get) => in_array($get('typology'), ['effusive', 'explosive'])),
+                                    
                                         
 
                                         // Select::make('explosive_eruption_typology')->options(
@@ -831,6 +851,10 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
                                                 'madness' => 'Madness',
@@ -846,12 +870,16 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
-                                                'precautionary' => 'Precautionary Principle',
                                                 'trust_in_authorities' => 'Trust in authorities',
                                                 'distrust_in_authorities' => 'Distrust in authorities',
                                                 'carelessness'=>'carelessness',
                                                 'recklessness'=>'recklessness',
-                                                'caution'=>'caution'
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
                                                 
                                             ])
                                             ->multiple()
@@ -982,10 +1010,15 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
-                                                'precautionary' => 'Precautionary Principle',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
                                                 'madness' => 'Madness',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
                                                 'awareness' => 'Awareness',
                                                 'unawareness' => 'Unawareness',
                                                 'acceptance' => 'Acceptance',
@@ -996,9 +1029,16 @@ class TextResource extends Resource
                                                 'denial' => 'Denial',
                                                 'disregard' => 'Disregard',
                                                 'scepticism' => 'Scepticism',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities',
                                                 'carelessness'=>'carelessness',
                                                 'recklessness'=>'recklessness',
-                                                'caution'=>'caution'
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
                                             ])
                                             ->multiple()
                                         ,
@@ -1285,7 +1325,8 @@ class TextResource extends Resource
 
                                                 'wonder'=> 'Wonder', 
                                                 'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination'
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
 
 
 
@@ -1407,20 +1448,6 @@ class TextResource extends Resource
 
                                         Select::make('attitude')
                                             ->options([
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
                                                 'calm' => 'Calm',
                                                 'happiness' => 'Happiness',
                                                 'fear' => 'Fear',
@@ -1432,10 +1459,35 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
+                                                'depression' => 'Depression',
+                                                'pessimism' => 'Pessimism',
                                                 'madness' => 'Madness',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'awareness' => 'Awareness',
+                                                'unawareness' => 'Unawareness',
+                                                'acceptance' => 'Acceptance',
+                                                'avoidance' => 'Avoidance',
+                                                'mitigation' => 'Mitigation',
+                                                'adaptation' => 'Adaptation',
+                                                'compensation' => 'Compensation',
+                                                'denial' => 'Denial',
+                                                'disregard' => 'Disregard',
+                                                'scepticism' => 'Scepticism',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities',
                                                 'carelessness'=>'carelessness',
                                                 'recklessness'=>'recklessness',
-                                                'caution'=>'caution'
+                                                'caution'=>'caution',
+
+                                                'wonder'=> 'Wonder', 
+                                                'curiosity'=> 'Curiosity', 
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
                                             ])
                                             ->multiple()
                                         ,
@@ -1590,7 +1642,7 @@ class TextResource extends Resource
 
 
                                 Repeater::make('individual_reaction')
-                                    ->label('Individual reaction to the event')
+                                    ->label('Individual reaction/affects to the event')
                                     ->schema([
                                         TextInput::make('name'),
 
@@ -1647,7 +1699,7 @@ class TextResource extends Resource
                                                 'dysphoria' => 'Dysphoria',
                                                 'trust' => 'Trust',
                                                 'distrust' => 'Distrust',
-                                                'madness' => 'Madness'
+                                                'madness' => 'Madness',
                                             ])
                                             ->multiple()
                                         ,
@@ -2046,12 +2098,15 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
-                                                'precautionary' => 'Precautionary Principle',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness',
                                                 'trust' => 'Trust',
                                                 'distrust' => 'Distrust',
-                                                'madness' => 'Madness',
                                                 'awareness' => 'Awareness',
                                                 'unawareness' => 'Unawareness',
                                                 'acceptance' => 'Acceptance',
@@ -2070,7 +2125,9 @@ class TextResource extends Resource
 
                                                 'wonder'=> 'Wonder', 
                                                 'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination'
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
+
                                             ])
                                             ->multiple()
                                         ,
@@ -2186,17 +2243,6 @@ class TextResource extends Resource
 
                                         Select::make('attitude')
                                             ->options([
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'precautionary' => 'Precautionary Principle',
                                                 'calm' => 'Calm',
                                                 'happiness' => 'Happiness',
                                                 'fear' => 'Fear',
@@ -2208,16 +2254,35 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
                                                 'madness' => 'Madness',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'awareness' => 'Awareness',
+                                                'unawareness' => 'Unawareness',
+                                                'acceptance' => 'Acceptance',
+                                                'avoidance' => 'Avoidance',
+                                                'mitigation' => 'Mitigation',
+                                                'adaptation' => 'Adaptation',
+                                                'compensation' => 'Compensation',
+                                                'denial' => 'Denial',
+                                                'disregard' => 'Disregard',
+                                                'scepticism' => 'Scepticism',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities',
                                                 'carelessness'=>'carelessness',
                                                 'recklessness'=>'recklessness',
                                                 'caution'=>'caution',
 
                                                 'wonder'=> 'Wonder', 
                                                 'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination'
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
                                             ])
                                             ->multiple()
                                         ,
@@ -2510,9 +2575,9 @@ class TextResource extends Resource
                                                 'cowardice' => 'Cowardice',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
+                                                'madness' => 'Madness',
                                                 'trust' => 'Trust',
                                                 'distrust' => 'Distrust',
-                                                'madness' => 'Madness',
                                                 'awareness' => 'Awareness',
                                                 'unawareness' => 'Unawareness',
                                                 'acceptance' => 'Acceptance',
@@ -2531,7 +2596,8 @@ class TextResource extends Resource
 
                                                 'wonder'=> 'Wonder', 
                                                 'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination'
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
                                             ])
                                             ->multiple()
                                         ,
@@ -2650,20 +2716,6 @@ class TextResource extends Resource
 
                                         Select::make('attitude')
                                             ->options([
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
                                                 'calm' => 'Calm',
                                                 'happiness' => 'Happiness',
                                                 'fear' => 'Fear',
@@ -2675,16 +2727,35 @@ class TextResource extends Resource
                                                 'terror' => 'Terror',
                                                 'panic' => 'Panic',
                                                 'malaise' => 'Malaise',
+                                                'prayer' => 'Prayer',
+                                                'fatalism' => 'Fatalism',
+                                                'heroism' => 'Heroism',
+                                                'cowardice' => 'Cowardice',
                                                 'depression' => 'Depression',
                                                 'pessimism' => 'Pessimism',
                                                 'madness' => 'Madness',
+                                                'trust' => 'Trust',
+                                                'distrust' => 'Distrust',
+                                                'awareness' => 'Awareness',
+                                                'unawareness' => 'Unawareness',
+                                                'acceptance' => 'Acceptance',
+                                                'avoidance' => 'Avoidance',
+                                                'mitigation' => 'Mitigation',
+                                                'adaptation' => 'Adaptation',
+                                                'compensation' => 'Compensation',
+                                                'denial' => 'Denial',
+                                                'disregard' => 'Disregard',
+                                                'scepticism' => 'Scepticism',
+                                                'trust_in_authorities' => 'Trust in authorities',
+                                                'distrust_in_authorities' => 'Distrust in authorities',
                                                 'carelessness'=>'carelessness',
                                                 'recklessness'=>'recklessness',
                                                 'caution'=>'caution',
 
                                                 'wonder'=> 'Wonder', 
                                                 'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination'
+                                                'fascination'=> 'Fascination',
+                                                'loss_of_consciousness' => 'Loss of consciousness',
                                             ])
                                             ->multiple()
                                         ,
@@ -2825,7 +2896,7 @@ class TextResource extends Resource
 
 
                                 Repeater::make('individual_reaction')
-                                    ->label('Individual reaction to the event')
+                                    ->label('Individual reaction/affects to the event')
                                     ->schema([
                                         TextInput::make('name'),
 
@@ -2996,7 +3067,7 @@ class TextResource extends Resource
 
 
                                 Repeater::make('collective_affects_general')
-                                    ->label('Collective reactions to the event')
+                                    ->label('Collective reactions/affects to the event')
                                     ->schema([
                                         Select::make('group')
                                             ->options([
@@ -3160,12 +3231,10 @@ class TextResource extends Resource
 
 
                         RichEditor::make('substantives')
-                            ->label('Significant words and phrases related to the entity/phenomenon')
-                            ->helperText('Hypernonyms or Hyponyms; Technical vs non-technical vocabulary; Foreign words; Loan Words, Calques; Neologisms; Archaisms'),
+                            ->label('Significant words and phrases related to the entity/phenomenon'),
 
                         RichEditor::make('verbs_agency')
-                            ->label('Significant words and phrases related to the characters’ agency')
-                            ->helperText('predominance of active or passive forms'),
+                            ->label('Significant words and phrases related to the characters’ agency'),
 
                
                         Select::make('punctuation')
@@ -3228,7 +3297,7 @@ class TextResource extends Resource
                     ->schema([
                       
                         Select::make('symbols')
-                            ->label('Motifs, Topoi, Mythologemes')
+                            ->label('Motifs, Topoi, Wars, Mythologemes')
                             ->multiple()
                             ->helperText('related to the entity/phenomenon and to individuals / social groups / societies represented in the literary work')
                             ->options([
