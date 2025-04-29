@@ -25,8 +25,99 @@ use Filament\Forms\Components\Repeater;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 
+
 class TextResource extends Resource
 {
+
+    public static array $risks = [
+    'calm' => 'Calm',
+    'happiness' => 'Happiness',
+    'fear' => 'Fear',
+    'anxiety' => 'Anxiety',
+    'apprehension' => 'Apprehension',
+    'discomfort' => 'Discomfort',
+    'distress' => 'Distress',
+    'unease' => 'Unease',
+    'terror' => 'Terror',
+    'panic' => 'Panic',
+    'malaise' => 'Malaise',
+    'prayer' => 'Prayer',
+    'fatalism' => 'Fatalism',
+    'heroism' => 'Heroism',
+    'cowardice' => 'Cowardice',
+    'depression' => 'Depression',
+    'pessimism' => 'Pessimism',
+    'madness' => 'Madness',
+    'trust' => 'Trust',
+    'distrust' => 'Distrust',
+    'awareness' => 'Awareness',
+    'unawareness' => 'Unawareness',
+    'acceptance' => 'Acceptance',
+    'avoidance' => 'Avoidance',
+    'mitigation' => 'Mitigation',
+    'adaptation' => 'Adaptation',
+    'compensation' => 'Compensation',
+    'denial' => 'Denial',
+    'disregard' => 'Disregard',
+    'scepticism' => 'Scepticism',
+    'trust_in_authorities' => 'Trust in authorities',
+    'distrust_in_authorities' => 'Distrust in authorities',
+    'carelessness'=>'carelessness',
+    'recklessness'=>'recklessness',
+    'caution'=>'caution',
+
+    'wonder'=> 'Wonder', 
+    'curiosity'=> 'Curiosity', 
+    'fascination'=> 'Fascination',
+    'loss_of_consciousness' => 'Loss of consciousness',
+];
+
+public static array $events = [
+    'escape' => 'Escape',
+    'immobility' => 'Immobility',
+    'paralysis' => 'Paralysis',
+    'fight_for_survival' => 'Fight for survival',
+    'surrender' => 'Surrender',
+    'intervention' => 'Intervention',
+    'passiveness' => 'Passiveness',
+    'order' => 'Order',
+    'disorder' => 'Disorder',
+    'cooperation' => 'Cooperation',
+    'hindrance' => 'Hindrance',
+    'solidarity' => 'Solidarity',
+    'self_absorption' => 'Self-absorption',
+    'loss_of_consciousness' => 'Loss of consciousness',
+    'prayer' => 'Prayer',
+    'fatalism' => 'Fatalism',
+    'heroism' => 'Heroism',
+    'cowardice' => 'Cowardice',
+    'fear' => 'Fear',
+    'terror' => 'Terror',
+    'panic' => 'Panic',
+    'empathy' => 'Empathy',
+    'astonishment' => 'Astonishment',
+    'anxiety' => 'Anxiety',
+    'unease' => 'Unease',
+    'discomfort' => 'Discomfort',
+    'distress' => 'Distress',
+    'malaise' => 'Malaise',
+    'rage' => 'Rage',
+    'sadness' => 'Sadness',
+    'despair' => 'Despair',
+    'neurosis' => 'Neurosis',
+    'trauma' => 'Trauma',
+    'post_traumatic_stress_disorder' => 'Post-traumatic stress disorder',
+    'scepticism' => 'Scepticism',
+    'doubt' => 'Doubt',
+    'resignation' => 'Resignation',
+    'survival_instinct' => 'Survival instinct',
+    'euphoria' => 'Euphoria',
+    'dysphoria' => 'Dysphoria',
+    'trust' => 'Trust',
+    'distrust' => 'Distrust',
+    'madness' => 'Madness',
+];
+
     protected static ?string $model = Text::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -308,14 +399,15 @@ class TextResource extends Resource
                                     
                                             return match ($typology) {
                                                 'effusive' => [
+                                                    'emission_of_lava' => 'Emission of lava',
+                                                    
+                                                ],
+                                                'explosive' => [
                                                     'gases' => 'Gases',
                                                     'ash_rainfall' => 'Ash rainfall',
                                                     'lapilli' => 'Lapilli',
                                                     'volcanic_bombs' => 'Volcanic bombs',
                                                     'pumice_stones' => 'Emission of pumice stones',
-                                                ],
-                                                'explosive' => [
-                                                    'emission_of_lava' => 'Emission of lava',
                                                 ],
                                                 default => [],
                                             };
@@ -416,6 +508,7 @@ class TextResource extends Resource
                                                 'pollution' => 'Pollution',
                                                 'sea_pollution' => 'Sea pollution',
                                                 'earthquake' => 'Earthquake',
+                                                'tsunami' => 'Tsunami',
                                                 'other' => 'Other'
                                              ]
                                             )
@@ -676,6 +769,7 @@ class TextResource extends Resource
                                                 'pollution' => 'Pollution',
                                                 'chemical_waste' => 'Chemical Waste',
                                                 'nuclear_waste' => 'Nuclear Waste',
+                                                'tsunami' => 'Tsunami',
                                                 'other' => 'Other',
                                             ])
                                         ,
@@ -839,98 +933,12 @@ class TextResource extends Resource
                                         TextInput::make('nationality'),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                                
-                                            ])
+                                            ->options(self::$risks)
                                             ->multiple()
                                         ,
                                     ])
                                     ->visible(fn(Get $get) => $get('reference_volcanic_risk') === 'referenced')
                                     ->createItemButtonLabel('Add Character'),
-
-
-
-                                // Repeater::make('affects_individual')
-                                //     ->label('What are the individual affects towards volcanic risk?')
-                                //     ->schema([
-                                //         TextInput::make('name'),
-
-                                //         TextInput::make('gender'),
-
-                                //         TextInput::make('age'),
-
-                                //         TextInput::make('social_class'),
-
-                                //         TextInput::make('native_place'),
-
-                                //         TextInput::make('nationality'),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'calm' => 'Calm',
-                                //                 'happiness' => 'Happiness',
-                                //                 'fear' => 'Fear',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'apprehension' => 'Apprehension',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'unease' => 'Unease',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'malaise' => 'Malaise',
-                                //                 'depression' => 'Depression',
-                                //                 'pessimism' => 'Pessimism',
-                                //                 'madness' => 'Madness',
-                                //                 'trust' => 'Trust',
-                                //                 'distrust' => 'Distrust',
-                                                
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->visible(fn(Get $get) => $get('reference_volcanic_risk') === 'referenced')
-                                //     ->createItemButtonLabel('Add Character'),
-
 
 
 
@@ -998,48 +1006,7 @@ class TextResource extends Resource
                                             ]),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                            ])
+                                            ->options( self::$risks)
                                             ->multiple()
                                         ,
                                     ])
@@ -1047,84 +1014,6 @@ class TextResource extends Resource
                                     ->createItemButtonLabel('Add group'),
 
 
-                                // Repeater::make('affects_collective')
-                                //     ->label('What are the collective affects towards volcanic risk?')
-                                //     ->schema([
-                                //         Select::make('group')
-                                //             ->options([
-                                //                 'humans' => 'Humans',
-                                //                 'aliens' => 'Aliens',
-                                //                 'white_people' => 'White people',
-                                //                 'black_people' => 'Black people',
-                                //                 'indigenous_people' => 'Indigenous people',
-                                //                 'old_people' => 'Old People',
-                                //                 'elders' => 'Elders',
-                                //                 'adults' => 'Adults',
-                                //                 'young_people' => 'Young People',
-                                //                 'men' => 'Men',
-                                //                 'women' => 'Women',
-                                //                 'boys' => 'Boys',
-                                //                 'girls' => 'Girls',
-                                //                 'children' => 'Children',
-                                //                 'nobles' => 'Nobles',
-                                //                 'aristocrats' => 'Aristocrats',
-                                //                 'middle_class_people' => 'Middle-class people',
-                                //                 'working_class_people' => 'Working class people',
-                                //                 'officers' => 'The officers',
-                                //                 'army' => 'The army',
-                                //                 'civil_defense' => 'The civil defense',
-                                //                 'masters' => 'Masters',
-                                //                 'servants' => 'Servants',
-                                //                 'crowd' => 'The crowd',
-                                //                 'population' => 'The population',
-                                //                 'slaves' => 'Slaves',
-                                //                 'politicians' => 'Politicians',
-                                //                 'philosophers' => 'Philosophers',
-                                //                 'scholars' => 'Scholars',
-                                //                 'educated_people' => 'Educated people',
-                                //                 'uneducated_people' => 'Uneducated people',
-                                //                 'business_people' => 'Business people',
-                                //                 'common_people' => 'Common people',
-                                //                 'wealthy_people' => 'Wealthy people',
-                                //                 'poor_people' => 'Poor people',
-                                //                 'religious_people' => 'Religious people',
-                                //                 'atheists' => 'Atheists',
-                                //                 'believers' => 'Believers',
-                                //                 'pagan_priests' => 'Pagan Priests',
-                                //                 'christian_priests' => 'Christian Priests',
-                                //                 'travellers' => 'Travellers',
-                                //                 'settlers' => 'Settlers',
-                                //                 'colonists' => 'Colonists',
-                                //                 'adventurers' => 'Adventurers',
-                                //                 'explorers' => 'Explorers',
-                                //                 'colonisers' => 'Colonisers',
-                                //                 'colonised_people' => 'Colonised people',
-                                //                 'scientists' => 'Scientists',
-                                //             ]),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'calm' => 'Calm',
-                                //                 'happiness' => 'Happiness',
-                                //                 'fear' => 'Fear',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'apprehension' => 'Apprehension',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'unease' => 'Unease',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'malaise' => 'Malaise',
-                                //                 'precautionary' => 'Precautionary Principle',
-                                //                 'depression' => 'Depression',
-                                //                 'pessimism' => 'Pessimism',
-                                //                 'madness' => 'Madness'
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->visible(fn(Get $get) => $get('reference_volcanic_risk') === 'referenced')
-                                //     ->createItemButtonLabel('Add group'),
 
                             ])
                             ->visible(fn(Get $get) => $get('geological_entity_kind') === 'volcano' && $get('real_event') === 'literary'),
@@ -1178,31 +1067,22 @@ class TextResource extends Resource
                                     ->schema([
                                         Select::make('typology')
                                             ->options([
-                                                'Effusive eruption' => ['gases' => 'Gases',
+                                                'Effusive eruption' => [
+                                                    'emission_of_lava' => 'Emission of lava'
+                                                  
+                                            ],
+                                                'Explosive eruption' => [
+                                                      'gases' => 'Gases',
                                                 'ash_rainfall' => 'Ash rainfall',
                                                 'lapilli' => 'Lapilli',
                                                 'volcanic_bombs' => 'Volcanic bombs',
-                                                'pumice_stones'=>'emission of pumice stones'],
-                                                'Explosive eruption' => ['emission_of_lava' => 'Emission of lava'],
+                                                'pumice_stones'=>'emission of pumice stones'
+                                                ],
                                                 'other' => 'other'
                                             ])->reactive(),
                                         
 
-                                        // Select::make('explosive_eruption_typology')->options(
-                                        //         ['gases' => 'Gases',
-                                        //         'ash_rainfall' => 'Ash rainfall',
-                                        //         'lapilli' => 'Lapilli',
-                                        //         'volcanic_bombs' => 'Volcanic bombs',
-                                        //         'pumice_stones'=>'emission of pumice stones']
-                                        // )->visible(fn(Get $get) => $get('typology') === 'explosive_eruption'),
-
-                                        // Select::make('explosive_eruption_typology')->options(
-                                        //     ['emission_of_lava' => 'Emission of lava']
-                                        // )->visible(fn(Get $get) => $get('typology') === 'effusive_eruption'),
-
-                                        // TextInput::make('comment')
-                                        //     ->label('Comment')
-                                        //     ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
+                                       
                                     ])
                                     ->createItemButtonLabel('Add typology'),
 
@@ -1286,51 +1166,7 @@ class TextResource extends Resource
                                         TextInput::make('nationality'),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-
-
-
-                                            ])
+                                            ->options(self::$risks)
                                             ->multiple()
                                         ,
                                     ])
@@ -1338,51 +1174,6 @@ class TextResource extends Resource
                                     ->createItemButtonLabel('Add Character'),
 
 
-
-                                // Repeater::make('affects_individual')
-                                //     ->label('What are the individual affects towards volcanic risk?')
-                                //     ->schema([
-                                //         TextInput::make('name'),
-
-                                //         TextInput::make('gender'),
-
-                                //         TextInput::make('age'),
-
-                                //         TextInput::make('social_class'),
-
-                                //         TextInput::make('native_place'),
-
-                                //         TextInput::make('nationality'),
-
-                                        // Select::make('attitude')
-                                        //     ->options([
-                                    //             'calm' => 'Calm',
-                                    //             'happiness' => 'Happiness',
-                                    //             'fear' => 'Fear',
-                                    //             'anxiety' => 'Anxiety',
-                                    //             'apprehension' => 'Apprehension',
-                                    //             'discomfort' => 'Discomfort',
-                                    //             'distress' => 'Distress',
-                                    //             'unease' => 'Unease',
-                                    //             'terror' => 'Terror',
-                                    //             'panic' => 'Panic',
-                                    //             'malaise' => 'Malaise',
-                                    //             'prayer' => 'Prayer',
-                                    //             'fatalism' => 'Fatalism',
-                                    //             'heroism' => 'Heroism',
-                                    //             'cowardice' => 'Cowardice',
-                                    //             'depression' => 'Depression',
-                                    //             'pessimism' => 'Pessimism',
-                                    //             'madness' => 'Madness',
-                                    //             'trust' => 'Trust',
-                                    //             'distrust' => 'Distrust',
-                                    //         ])
-                                    //         ->multiple()
-                                    //     ,
-                                    // ])
-                                    // ->visible(fn(Get $get) => $get('reference_volcanic_risk') === 'referenced')
-
-                                    // ->createItemButtonLabel('Add Character'),
 
                                 Repeater::make('attitude_collective')
                                     ->label('What is the collective affect/attitude/strategy towards volcanic risk?')
@@ -1447,138 +1238,12 @@ class TextResource extends Resource
                                             ]),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                            ])
+                                            ->options(self::$risks)
                                             ->multiple()
                                         ,
                                     ])
                                     ->visible(fn(Get $get) => $get('reference_volcanic_risk') === 'referenced')
                                     ->createItemButtonLabel('Add group'),
-
-
-                                // Repeater::make('affects_collective')
-                                //     ->label('What are the collective affects towards volcanic risk?')
-                                //     ->schema([
-                                //         Select::make('group')
-                                //             ->options([
-                                //                 'humans' => 'Humans',
-                                //                 'aliens' => 'Aliens',
-                                //                 'white_people' => 'White people',
-                                //                 'black_people' => 'Black people',
-                                //                 'indigenous_people' => 'Indigenous people',
-                                //                 'old_people' => 'Old People',
-                                //                 'elders' => 'Elders',
-                                //                 'adults' => 'Adults',
-                                //                 'young_people' => 'Young People',
-                                //                 'men' => 'Men',
-                                //                 'women' => 'Women',
-                                //                 'boys' => 'Boys',
-                                //                 'girls' => 'Girls',
-                                //                 'children' => 'Children',
-                                //                 'nobles' => 'Nobles',
-                                //                 'aristocrats' => 'Aristocrats',
-                                //                 'middle_class_people' => 'Middle-class people',
-                                //                 'working_class_people' => 'Working class people',
-                                //                 'officers' => 'The officers',
-                                //                 'army' => 'The army',
-                                //                 'civil_defense' => 'The civil defense',
-                                //                 'masters' => 'Masters',
-                                //                 'servants' => 'Servants',
-                                //                 'crowd' => 'The crowd',
-                                //                 'population' => 'The population',
-                                //                 'slaves' => 'Slaves',
-                                //                 'politicians' => 'Politicians',
-                                //                 'philosophers' => 'Philosophers',
-                                //                 'scholars' => 'Scholars',
-                                //                 'educated_people' => 'Educated people',
-                                //                 'uneducated_people' => 'Uneducated people',
-                                //                 'business_people' => 'Business people',
-                                //                 'common_people' => 'Common people',
-                                //                 'wealthy_people' => 'Wealthy people',
-                                //                 'poor_people' => 'Poor people',
-                                //                 'religious_people' => 'Religious people',
-                                //                 'atheists' => 'Atheists',
-                                //                 'believers' => 'Believers',
-                                //                 'pagan_priests' => 'Pagan Priests',
-                                //                 'christian_priests' => 'Christian Priests',
-                                //                 'travellers' => 'Travellers',
-                                //                 'settlers' => 'Settlers',
-                                //                 'colonists' => 'Colonists',
-                                //                 'adventurers' => 'Adventurers',
-                                //                 'explorers' => 'Explorers',
-                                //                 'colonisers' => 'Colonisers',
-                                //                 'colonised_people' => 'Colonised people',
-                                //                 'scientists' => 'Scientists',
-                                //             ]),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'calm' => 'Calm',
-                                //                 'happiness' => 'Happiness',
-                                //                 'fear' => 'Fear',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'apprehension' => 'Apprehension',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'unease' => 'Unease',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'malaise' => 'Malaise',
-                                //                 'prayer' => 'Prayer',
-                                //                 'fatalism' => 'Fatalism',
-                                //                 'heroism' => 'Heroism',
-                                //                 'cowardice' => 'Cowardice',
-                                //                 'depression' => 'Depression',
-                                //                 'pessimism' => 'Pessimism',
-                                //                 'madness' => 'Madness'
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->visible(fn(Get $get) => $get('reference_volcanic_risk') === 'referenced')
-                                //     ->createItemButtonLabel('Add group'),
-
-
 
                                 Repeater::make('ecological_impact')
                                     ->label('Ecological impact of the eruption')
@@ -1595,6 +1260,7 @@ class TextResource extends Resource
                                                 'pollution' => 'Pollution',
                                                 'sea_pollution' => 'Sea pollution',
                                                 'earthquake' => 'Earthquake',
+                                                'tsunami' => 'Tsunami',
                                                 'other' => 'Other'
                                              ]
                                             )
@@ -1631,18 +1297,13 @@ class TextResource extends Resource
                                                 'recovery' => 'Recovery'
                                             ]
                                             )
-                                        ,
-
-                                        // TextInput::make('comment')
-                                        //     ->label('Comment')
-                                        //     ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
-                                    ])
+                                        ,       ])
                                     ->createItemButtonLabel('Add typology'),
 
 
 
                                 Repeater::make('individual_reaction')
-                                    ->label('Individual reaction/affects to the event')
+                                    ->label('Individual affects/strategies to the event')
                                     ->schema([
                                         TextInput::make('name'),
 
@@ -1657,104 +1318,13 @@ class TextResource extends Resource
                                         TextInput::make('nationality'),
 
                                         Select::make('reactions')
-                                            ->options([
-                                                'escape' => 'Escape',
-                                                'immobility_paralysis' => 'Immobility Paralysis',
-                                                'fight_for_survival' => 'Fight for survival',
-                                                'surrender' => 'Surrender',
-                                                'intervention' => 'Intervention',
-                                                'passiveness' => 'Passiveness',
-                                                'order' => 'Order',
-                                                'disorder' => 'Disorder',
-                                                'cooperation' => 'Cooperation',
-                                                'hindrance' => 'Hindrance',
-                                                'solidarity' => 'Solidarity',
-                                                'self_absorption' => 'Self-absorption',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'fear' => 'Fear',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'empathy' => 'Empathy',
-                                                'astonishment' => 'Astonishment',
-                                                'anxiety' => 'Anxiety',
-                                                'unease' => 'Unease',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'malaise' => 'Malaise',
-                                                'rage' => 'Rage',
-                                                'sadness' => 'Sadness',
-                                                'despair' => 'Despair',
-                                                'neurosis' => 'Neurosis',
-                                                'trauma' => 'Trauma',
-                                                'post_traumatic_stress_disorder' => 'Post-traumatic stress disorder',
-                                                'scepticism' => 'Scepticism',
-                                                'doubt' => 'Doubt',
-                                                'resignation' => 'Resignation',
-                                                'survival_instinct' => 'Survival instinct',
-                                                'euphoria' => 'Euphoria',
-                                                'dysphoria' => 'Dysphoria',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'madness' => 'Madness',
-                                            ])
+                                            ->options(self::$events)
                                             ->multiple()
+                                            ->searchable()
                                         ,
                                     ])
                                     ->createItemButtonLabel('Add Reaction'),
 
-
-
-                                // Repeater::make('individual_affects_general')
-                                //     ->label('Individual affects')
-                                //     ->schema([
-                                //         TextInput::make('name'),
-
-                                //         TextInput::make('gender'),
-
-                                //         TextInput::make('age'),
-
-                                //         TextInput::make('social_class'),
-
-                                //         TextInput::make('native_place'),
-
-                                //         TextInput::make('nationality'),
-
-                                //         Select::make('reactions')
-                                //             ->options([
-                                //                 'fear' => 'Fear',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'empathy' => 'Empathy',
-                                //                 'astonishment' => 'Astonishment',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'unease' => 'Unease',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'malaise' => 'Malaise',
-                                //                 'rage' => 'Rage',
-                                //                 'sadness' => 'Sadness',
-                                //                 'despair' => 'Despair',
-                                //                 'neurosis' => 'Neurosis',
-                                //                 'trauma' => 'Trauma',
-                                //                 'post_traumatic_stress_disorder' => 'Post-traumatic stress disorder',
-                                //                 'scepticism' => 'Scepticism',
-                                //                 'doubt' => 'Doubt',
-                                //                 'resignation' => 'Resignation',
-                                //                 'survival_instinct' => 'Survival instinct',
-                                //                 'euphoria' => 'Euphoria',
-                                //                 'dysphoria' => 'Dysphoria',
-                                //                 'trust' => 'Trust',
-                                //                 'distrust' => 'Distrust',
-                                //                 'madness' => 'Madness'
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->createItemButtonLabel('Add Reaction'),
 
 
                                 Repeater::make('collective_affects_general')
@@ -1819,136 +1389,14 @@ class TextResource extends Resource
                                             ]),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'escape' => 'Escape',
-                                                'immobility_paralysis' => 'Immobility Paralysis',
-                                                'fight_for_survival' => 'Fight for survival',
-                                                'surrender' => 'Surrender',
-                                                'intervention' => 'Intervention',
-                                                'passiveness' => 'Passiveness',
-                                                'order' => 'Order',
-                                                'disorder' => 'Disorder',
-                                                'cooperation' => 'Cooperation',
-                                                'hindrance' => 'Hindrance',
-                                                'solidarity' => 'Solidarity',
-                                                'self_absorption' => 'Self-absorption',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'fear' => 'Fear',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'empathy' => 'Empathy',
-                                                'astonishment' => 'Astonishment',
-                                                'anxiety' => 'Anxiety',
-                                                'unease' => 'Unease',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'malaise' => 'Malaise',
-                                                'rage' => 'Rage',
-                                                'sadness' => 'Sadness',
-                                                'despair' => 'Despair',
-                                                'neurosis' => 'Neurosis',
-                                                'trauma' => 'Trauma',
-                                                'post_traumatic_stress_disorder' => 'Post-traumatic stress disorder',
-                                                'scepticism' => 'Scepticism',
-                                                'doubt' => 'Doubt',
-                                                'resignation' => 'Resignation',
-                                                'survival_instinct' => 'Survival instinct',
-                                                'euphoria' => 'Euphoria',
-                                                'dysphoria' => 'Dysphoria',
-                                            ])
+                                            ->options(
+                                                self::$events
+                                            )
                                             ->multiple()
                                         ,
                                     ])
                                     ->createItemButtonLabel('Add group'),
 
-
-                                // Repeater::make('collective_affects_general')
-                                //     ->label('Collective affects to the event')
-                                //     ->schema([
-                                //         Select::make('group')
-                                //             ->options([
-                                //                 'humans' => 'Humans',
-                                //                 'aliens' => 'Aliens',
-                                //                 'white_people' => 'White people',
-                                //                 'black_people' => 'Black people',
-                                //                 'indigenous_people' => 'Indigenous people',
-                                //                 'old_people' => 'Old People',
-                                //                 'elders' => 'Elders',
-                                //                 'adults' => 'Adults',
-                                //                 'young_people' => 'Young People',
-                                //                 'men' => 'Men',
-                                //                 'women' => 'Women',
-                                //                 'boys' => 'Boys',
-                                //                 'girls' => 'Girls',
-                                //                 'children' => 'Children',
-                                //                 'nobles' => 'Nobles',
-                                //                 'aristocrats' => 'Aristocrats',
-                                //                 'middle_class_people' => 'Middle-class people',
-                                //                 'working_class_people' => 'Working class people',
-                                //                 'officers' => 'The officers',
-                                //                 'army' => 'The army',
-                                //                 'civil_defense' => 'The civil defense',
-                                //                 'masters' => 'Masters',
-                                //                 'servants' => 'Servants',
-                                //                 'crowd' => 'The crowd',
-                                //                 'population' => 'The population',
-                                //                 'slaves' => 'Slaves',
-                                //                 'politicians' => 'Politicians',
-                                //                 'philosophers' => 'Philosophers',
-                                //                 'scholars' => 'Scholars',
-                                //                 'educated_people' => 'Educated people',
-                                //                 'uneducated_people' => 'Uneducated people',
-                                //                 'business_people' => 'Business people',
-                                //                 'common_people' => 'Common people',
-                                //                 'wealthy_people' => 'Wealthy people',
-                                //                 'poor_people' => 'Poor people',
-                                //                 'religious_people' => 'Religious people',
-                                //                 'atheists' => 'Atheists',
-                                //                 'believers' => 'Believers',
-                                //                 'pagan_priests' => 'Pagan Priests',
-                                //                 'christian_priests' => 'Christian Priests',
-                                //                 'travellers' => 'Travellers',
-                                //                 'settlers' => 'Settlers',
-                                //                 'colonists' => 'Colonists',
-                                //                 'adventurers' => 'Adventurers',
-                                //                 'explorers' => 'Explorers',
-                                //                 'colonisers' => 'Colonisers',
-                                //                 'colonised_people' => 'Colonised people',
-                                //                 'scientists' => 'Scientists',
-                                //             ]),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'fear' => 'Fear',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'empathy' => 'Empathy',
-                                //                 'astonishment' => 'Astonishment',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'unease' => 'Unease',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'malaise' => 'Malaise',
-                                //                 'rage' => 'Rage',
-                                //                 'sadness' => 'Sadness',
-                                //                 'despair' => 'Despair',
-                                //                 'neurosis' => 'Neurosis',
-                                //                 'trauma' => 'Trauma',
-                                //                 'post_traumatic_stress_disorder' => 'Post-traumatic stress disorder',
-                                //                 'scepticism' => 'Scepticism',
-                                //                 'doubt' => 'Doubt',
-                                //                 'resignation' => 'Resignation',
-                                //                 'survival_instinct' => 'Survival instinct',
-                                //                 'euphoria' => 'Euphoria',
-                                //                 'dysphoria' => 'Dysphoria',
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->createItemButtonLabel('Add group'),
 
 
                                 Select::make('phase_emphisized')
@@ -2071,7 +1519,7 @@ class TextResource extends Resource
                                     ->reactive(),
 
                                 Repeater::make('attitude_individual')
-                                    ->label('What is the individual affect/attitude/strategy towards seismic risk?')
+                                    ->label('What is the individual affect/attitude/strategy towards the seismic risk?')
                                     ->schema([
                                         TextInput::make('name'),
 
@@ -2086,49 +1534,7 @@ class TextResource extends Resource
                                         TextInput::make('nationality'),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-
-                                            ])
+                                            ->options(self::$risks)
                                             ->multiple()
                                         ,
                                     ])
@@ -2137,47 +1543,6 @@ class TextResource extends Resource
 
 
 
-                                // Repeater::make('affects_individual')
-                                //     ->label('What are the individual affects towards seismic risk?')
-                                //     ->schema([
-                                //         TextInput::make('name'),
-
-                                //         TextInput::make('gender'),
-
-                                //         TextInput::make('age'),
-
-                                //         TextInput::make('social_class'),
-
-                                //         TextInput::make('native_place'),
-
-                                //         TextInput::make('nationality'),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'calm' => 'Calm',
-                                //                 'happiness' => 'Happiness',
-                                //                 'fear' => 'Fear',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'apprehension' => 'Apprehension',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'unease' => 'Unease',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'malaise' => 'Malaise',
-                                //                 'precautionary' => 'Precautionary Principle',
-                                //                 'depression' => 'Depression',
-                                //                 'pessimism' => 'Pessimism',
-                                //                 'trust' => 'Trust',
-                                //                 'distrust' => 'Distrust',
-                                //                 'madness' => 'Madness'
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                    // ])
-                                    // ->visible(fn(Get $get) => $get('reference_seismic_risk') === 'referenced')
-
-                                    // ->createItemButtonLabel('Add Character'),
 
                                 Repeater::make('attitude_group')
                                     ->label('What is the collective affect/attitude/strategy towards seismic risk?')
@@ -2242,132 +1607,12 @@ class TextResource extends Resource
                                             ]),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                            ])
+                                            ->options(self::$risks)
                                             ->multiple()
                                         ,
                                     ])
                                     ->visible(fn(Get $get) => $get('reference_seismic_risk') === 'referenced')
                                     ->createItemButtonLabel('Add group'),
-
-
-                                // Repeater::make('affects_group')
-                                //     ->label('What are the collective affects towards seismic risk?')
-                                //     ->schema([
-                                //         Select::make('group')
-                                //             ->options([
-                                //                 'humans' => 'Humans',
-                                //                 'aliens' => 'Aliens',
-                                //                 'white_people' => 'White people',
-                                //                 'black_people' => 'Black people',
-                                //                 'indigenous_people' => 'Indigenous people',
-                                //                 'old_people' => 'Old People',
-                                //                 'elders' => 'Elders',
-                                //                 'adults' => 'Adults',
-                                //                 'young_people' => 'Young People',
-                                //                 'men' => 'Men',
-                                //                 'women' => 'Women',
-                                //                 'boys' => 'Boys',
-                                //                 'girls' => 'Girls',
-                                //                 'children' => 'Children',
-                                //                 'nobles' => 'Nobles',
-                                //                 'aristocrats' => 'Aristocrats',
-                                //                 'middle_class_people' => 'Middle-class people',
-                                //                 'working_class_people' => 'Working class people',
-                                //                 'officers' => 'The officers',
-                                //                 'army' => 'The army',
-                                //                 'civil_defense' => 'The civil defense',
-                                //                 'masters' => 'Masters',
-                                //                 'servants' => 'Servants',
-                                //                 'crowd' => 'The crowd',
-                                //                 'population' => 'The population',
-                                //                 'slaves' => 'Slaves',
-                                //                 'politicians' => 'Politicians',
-                                //                 'philosophers' => 'Philosophers',
-                                //                 'scholars' => 'Scholars',
-                                //                 'educated_people' => 'Educated people',
-                                //                 'uneducated_people' => 'Uneducated people',
-                                //                 'business_people' => 'Business people',
-                                //                 'common_people' => 'Common people',
-                                //                 'wealthy_people' => 'Wealthy people',
-                                //                 'poor_people' => 'Poor people',
-                                //                 'religious_people' => 'Religious people',
-                                //                 'atheists' => 'Atheists',
-                                //                 'believers' => 'Believers',
-                                //                 'pagan_priests' => 'Pagan Priests',
-                                //                 'christian_priests' => 'Christian Priests',
-                                //                 'travellers' => 'Travellers',
-                                //                 'settlers' => 'Settlers',
-                                //                 'colonists' => 'Colonists',
-                                //                 'adventurers' => 'Adventurers',
-                                //                 'explorers' => 'Explorers',
-                                //                 'colonisers' => 'Colonisers',
-                                //                 'colonised_people' => 'Colonised people',
-                                //                 'scientists' => 'Scientists',
-                                //             ]),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'calm' => 'Calm',
-                                //                 'happiness' => 'Happiness',
-                                //                 'fear' => 'Fear',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'apprehension' => 'Apprehension',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'unease' => 'Unease',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'malaise' => 'Malaise',
-                                //                 'depression' => 'Depression',
-                                //                 'pessimism' => 'Pessimism',
-                                //                 'madness' => 'Madness'
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->visible(fn(Get $get) => $get('reference_seismic_risk') === 'referenced')
-                                //     ->createItemButtonLabel('Add group'),
 
 
                             ])
@@ -2483,55 +1728,6 @@ class TextResource extends Resource
                                     ])
                                     ->createItemButtonLabel('Add degree'),
 
-                                // Repeater::make('degree_anthropization')
-                                //     ->label('Degree of Anthropization')
-                                //     ->helperText('(mentioned in historical sources, the media, scientific databases and websites)')
-                                //     ->schema([
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'remote-dwellings' => 'Remote dwellings',
-                                //                 'huts' => 'Huts',
-                                //                 'shelters' => 'Shelters',
-                                //                 'houses' => 'Houses',
-                                //                 'villas' => 'Villas',
-                                //                 'country-houses' => 'Country houses',
-                                //                 'factories' => 'Factories',
-                                //                 'shops' => 'Shops',
-                                //                 'company-premises' => 'Company Premises',
-                                //                 'offices' => 'Offices',
-                                //                 'facilities' => 'Facilities',
-                                //                 'public-buildings' => 'Public Buildings',
-                                //                 'temples' => 'Temples',
-                                //                 'churches' => 'Churches',
-                                //                 'schools' => 'Schools',
-                                //                 'hospitals' => 'Hospitals',
-                                //                 'streets' => 'Streets',
-                                //                 'squares' => 'Squares',
-                                //                 'arenas' => 'Arenas',
-                                //                 'settlements' => 'Settlements',
-                                //                 'villages' => 'Villages',
-                                //                 'towns' => 'Towns',
-                                //                 'cities' => 'Cities',
-                                //                 'metropolis' => 'Metropolis',
-                                //                 'megalopolis' => 'Megalopolis',
-                                //                 'nuclear-power-plants' => 'Nuclear power plants',
-                                //                 'dams' => 'Dams',
-                                //                 'tent-camps' => 'Tent camps',
-                                //                 'tent-cities' => 'Tent cities',
-                                //                 'slums' => 'Slums',
-                                //                 'heritage-sites' => 'Heritage Sites',
-                                //                 'sea-coast' => 'Sea coast',
-                                //                 'river-shores' => 'River shores',
-                                //                 'lake-shores' => 'Lake shores',
-                                //             ])
-                                //         ,
-
-                                //         TextInput::make('comment')
-                                //             ->label('Comment')
-                                //             ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
-                                //     ])
-                                //     ->createItemButtonLabel('Add degree'),
-
 
                                 Radio::make('reference_seismic_risk')
                                     ->options([
@@ -2542,7 +1738,7 @@ class TextResource extends Resource
 
 
                                 Repeater::make('attitude_individual')
-                                    ->label('What is the individual affect/attitude/strategy towards seismic risk?')
+                                    ->label('What is the individual affect/attitude/strategy towards the seismic risk?')
                                     ->schema([
                                         TextInput::make('name'),
 
@@ -2557,100 +1753,13 @@ class TextResource extends Resource
                                         TextInput::make('nationality'),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                            ])
+                                            ->options(self::$risks)
                                             ->multiple()
                                         ,
                                     ])
                                     ->visible(fn(Get $get) => $get('reference_seismic_risk') === 'referenced')
                                     ->createItemButtonLabel('Add Character'),
 
-
-
-                                // Repeater::make('affects_individual')
-                                //     ->label('What are the individual affects towards seismic risk?')
-                                //     ->schema([
-                                //         TextInput::make('name'),
-
-                                //         TextInput::make('gender'),
-
-                                //         TextInput::make('age'),
-
-                                //         TextInput::make('social_class'),
-
-                                //         TextInput::make('native_place'),
-
-                                //         TextInput::make('nationality'),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'calm' => 'Calm',
-                                //                 'happiness' => 'Happiness',
-                                //                 'fear' => 'Fear',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'apprehension' => 'Apprehension',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'unease' => 'Unease',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'malaise' => 'Malaise',
-                                //                 'prayer' => 'Prayer',
-                                //                 'fatalism' => 'Fatalism',
-                                //                 'heroism' => 'Heroism',
-                                //                 'cowardice' => 'Cowardice',
-                                //                 'depression' => 'Depression',
-                                //                 'pessimism' => 'Pessimism',
-                                //                 'trust' => 'Trust',
-                                //                 'distrust' => 'Distrust',
-                                //                 'madness' => 'Madness'
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->visible(fn(Get $get) => $get('reference_seismic_risk') === 'referenced')
-
-                                //     ->createItemButtonLabel('Add Character'),
 
                                 Repeater::make('attitude_group')
                                     ->label('What is the collective affect/attitude/strategy towards seismic risk?')
@@ -2715,48 +1824,7 @@ class TextResource extends Resource
                                             ]),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'calm' => 'Calm',
-                                                'happiness' => 'Happiness',
-                                                'fear' => 'Fear',
-                                                'anxiety' => 'Anxiety',
-                                                'apprehension' => 'Apprehension',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'unease' => 'Unease',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'malaise' => 'Malaise',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                                'depression' => 'Depression',
-                                                'pessimism' => 'Pessimism',
-                                                'madness' => 'Madness',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'awareness' => 'Awareness',
-                                                'unawareness' => 'Unawareness',
-                                                'acceptance' => 'Acceptance',
-                                                'avoidance' => 'Avoidance',
-                                                'mitigation' => 'Mitigation',
-                                                'adaptation' => 'Adaptation',
-                                                'compensation' => 'Compensation',
-                                                'denial' => 'Denial',
-                                                'disregard' => 'Disregard',
-                                                'scepticism' => 'Scepticism',
-                                                'trust_in_authorities' => 'Trust in authorities',
-                                                'distrust_in_authorities' => 'Distrust in authorities',
-                                                'carelessness'=>'carelessness',
-                                                'recklessness'=>'recklessness',
-                                                'caution'=>'caution',
-
-                                                'wonder'=> 'Wonder', 
-                                                'curiosity'=> 'Curiosity', 
-                                                'fascination'=> 'Fascination',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                            ])
+                                            ->options(self::$risks)
                                             ->multiple()
                                         ,
                                     ])
@@ -2764,89 +1832,7 @@ class TextResource extends Resource
                                     ->createItemButtonLabel('Add group'),
 
 
-                                // Repeater::make('affects_group')
-                                //     ->label('What are the collective affects towards seismic risk?')
-                                //     ->schema([
-                                //         Select::make('group')
-                                //             ->options([
-                                //                 'humans' => 'Humans',
-                                //                 'aliens' => 'Aliens',
-                                //                 'white_people' => 'White people',
-                                //                 'black_people' => 'Black people',
-                                //                 'indigenous_people' => 'Indigenous people',
-                                //                 'old_people' => 'Old People',
-                                //                 'elders' => 'Elders',
-                                //                 'adults' => 'Adults',
-                                //                 'young_people' => 'Young People',
-                                //                 'men' => 'Men',
-                                //                 'women' => 'Women',
-                                //                 'boys' => 'Boys',
-                                //                 'girls' => 'Girls',
-                                //                 'children' => 'Children',
-                                //                 'nobles' => 'Nobles',
-                                //                 'aristocrats' => 'Aristocrats',
-                                //                 'middle_class_people' => 'Middle-class people',
-                                //                 'working_class_people' => 'Working class people',
-                                //                 'officers' => 'The officers',
-                                //                 'army' => 'The army',
-                                //                 'civil_defense' => 'The civil defense',
-                                //                 'masters' => 'Masters',
-                                //                 'servants' => 'Servants',
-                                //                 'crowd' => 'The crowd',
-                                //                 'population' => 'The population',
-                                //                 'slaves' => 'Slaves',
-                                //                 'politicians' => 'Politicians',
-                                //                 'philosophers' => 'Philosophers',
-                                //                 'scholars' => 'Scholars',
-                                //                 'educated_people' => 'Educated people',
-                                //                 'uneducated_people' => 'Uneducated people',
-                                //                 'business_people' => 'Business people',
-                                //                 'common_people' => 'Common people',
-                                //                 'wealthy_people' => 'Wealthy people',
-                                //                 'poor_people' => 'Poor people',
-                                //                 'religious_people' => 'Religious people',
-                                //                 'atheists' => 'Atheists',
-                                //                 'believers' => 'Believers',
-                                //                 'pagan_priests' => 'Pagan Priests',
-                                //                 'christian_priests' => 'Christian Priests',
-                                //                 'travellers' => 'Travellers',
-                                //                 'settlers' => 'Settlers',
-                                //                 'colonists' => 'Colonists',
-                                //                 'adventurers' => 'Adventurers',
-                                //                 'explorers' => 'Explorers',
-                                //                 'colonisers' => 'Colonisers',
-                                //                 'colonised_people' => 'Colonised people',
-                                //                 'scientists' => 'Scientists',
-                                //             ]),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'calm' => 'Calm',
-                                //                 'happiness' => 'Happiness',
-                                //                 'fear' => 'Fear',
-                                //                 'anxiety' => 'Anxiety',
-                                //                 'apprehension' => 'Apprehension',
-                                //                 'discomfort' => 'Discomfort',
-                                //                 'distress' => 'Distress',
-                                //                 'unease' => 'Unease',
-                                //                 'terror' => 'Terror',
-                                //                 'panic' => 'Panic',
-                                //                 'malaise' => 'Malaise',
-                                //                 'prayer' => 'Prayer',
-                                //                 'fatalism' => 'Fatalism',
-                                //                 'heroism' => 'Heroism',
-                                //                 'cowardice' => 'Cowardice',
-                                //                 'depression' => 'Depression',
-                                //                 'pessimism' => 'Pessimism',
-                                //                 'madness' => 'Madness'
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                    // ])
-                                    // ->visible(fn(Get $get) => $get('reference_seismic_risk') === 'referenced')
-                                    // ->createItemButtonLabel('Add group'),
-
-
+                              
 
                                 Repeater::make('ecological_impact')
                                     ->label('Ecological impact of the earthquake')
@@ -2858,13 +1844,11 @@ class TextResource extends Resource
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
+                                                'tsunami' => 'Tsunami',
                                                 'other' => 'Other',
                                             ])
                                         ,
 
-                                        // TextInput::make('comment')
-                                        //     ->label('Comment')
-                                        //     ->placeholder('when quotations from historical sources are reported, use MLA quotation style (parentheses)')
                                     ])
                                     ->createItemButtonLabel('Add typology'),
 
@@ -2911,163 +1895,16 @@ class TextResource extends Resource
                                         TextInput::make('nationality'),
 
                                         Select::make('reactions')
-                                            ->options([
-                                                'escape' => 'Escape',
-                                                'immobility_paralysis' => 'Immobility Paralysis',
-                                                'fight_for_survival' => 'Fight for survival',
-                                                'surrender' => 'Surrender',
-                                                'intervention' => 'Intervention',
-                                                'passiveness' => 'Passiveness',
-                                                'order' => 'Order',
-                                                'disorder' => 'Disorder',
-                                                'cooperation' => 'Cooperation',
-                                                'hindrance' => 'Hindrance',
-                                                'solidarity' => 'Solidarity',
-                                                'self_absorption' => 'Self-absorption',
-                                                'loss_of_consciousness' => 'Loss of consciousness',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                            ])
+                                            ->options(self::$events)
                                             ->multiple()
                                         ,
                                     ])
                                     ->createItemButtonLabel('Add Reaction'),
 
-
-
-                                Repeater::make('individual_affects_general')
-                                    ->label('Individual affects')
-                                    ->schema([
-                                        TextInput::make('name'),
-
-                                        TextInput::make('gender'),
-
-                                        TextInput::make('age'),
-
-                                        TextInput::make('social_class'),
-
-                                        TextInput::make('native_place'),
-
-                                        TextInput::make('nationality'),
-
-                                        Select::make('reactions')
-                                            ->options([
-                                                'fear' => 'Fear',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'empathy' => 'Empathy',
-                                                'astonishment' => 'Astonishment',
-                                                'anxiety' => 'Anxiety',
-                                                'unease' => 'Unease',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'malaise' => 'Malaise',
-                                                'rage' => 'Rage',
-                                                'sadness' => 'Sadness',
-                                                'despair' => 'Despair',
-                                                'neurosis' => 'Neurosis',
-                                                'trauma' => 'Trauma',
-                                                'post_traumatic_stress_disorder' => 'Post-traumatic stress disorder',
-                                                'scepticism' => 'Scepticism',
-                                                'doubt' => 'Doubt',
-                                                'resignation' => 'Resignation',
-                                                'survival_instinct' => 'Survival instinct',
-                                                'euphoria' => 'Euphoria',
-                                                'dysphoria' => 'Dysphoria',
-                                                'trust' => 'Trust',
-                                                'distrust' => 'Distrust',
-                                                'madness' => 'Madness'
-                                            ])
-                                            ->multiple()
-                                        ,
-                                    ])
-                                    ->createItemButtonLabel('Add Reaction'),
-
-
-                                // Repeater::make('collective_reaction')
-                                //     ->label(' Collective reaction to the event')
-                                //     ->schema([
-                                //         Select::make('group')
-                                //             ->options([
-                                //                 'humans' => 'Humans',
-                                //                 'aliens' => 'Aliens',
-                                //                 'white_people' => 'White people',
-                                //                 'black_people' => 'Black people',
-                                //                 'indigenous_people' => 'Indigenous people',
-                                //                 'old_people' => 'Old People',
-                                //                 'elders' => 'Elders',
-                                //                 'adults' => 'Adults',
-                                //                 'young_people' => 'Young People',
-                                //                 'men' => 'Men',
-                                //                 'women' => 'Women',
-                                //                 'boys' => 'Boys',
-                                //                 'girls' => 'Girls',
-                                //                 'children' => 'Children',
-                                //                 'nobles' => 'Nobles',
-                                //                 'aristocrats' => 'Aristocrats',
-                                //                 'middle_class_people' => 'Middle-class people',
-                                //                 'working_class_people' => 'Working class people',
-                                //                 'officers' => 'The officers',
-                                //                 'army' => 'The army',
-                                //                 'civil_defense' => 'The civil defense',
-                                //                 'masters' => 'Masters',
-                                //                 'servants' => 'Servants',
-                                //                 'crowd' => 'The crowd',
-                                //                 'population' => 'The population',
-                                //                 'slaves' => 'Slaves',
-                                //                 'politicians' => 'Politicians',
-                                //                 'philosophers' => 'Philosophers',
-                                //                 'scholars' => 'Scholars',
-                                //                 'educated_people' => 'Educated people',
-                                //                 'uneducated_people' => 'Uneducated people',
-                                //                 'business_people' => 'Business people',
-                                //                 'common_people' => 'Common people',
-                                //                 'wealthy_people' => 'Wealthy people',
-                                //                 'poor_people' => 'Poor people',
-                                //                 'religious_people' => 'Religious people',
-                                //                 'atheists' => 'Atheists',
-                                //                 'believers' => 'Believers',
-                                //                 'pagan_priests' => 'Pagan Priests',
-                                //                 'christian_priests' => 'Christian Priests',
-                                //                 'travellers' => 'Travellers',
-                                //                 'settlers' => 'Settlers',
-                                //                 'colonists' => 'Colonists',
-                                //                 'adventurers' => 'Adventurers',
-                                //                 'explorers' => 'Explorers',
-                                //                 'colonisers' => 'Colonisers',
-                                //                 'colonised_people' => 'Colonised people',
-                                //                 'scientists' => 'Scientists',
-                                //             ]),
-
-                                //         Select::make('attitude')
-                                //             ->options([
-                                //                 'escape' => 'Escape',
-                                //                 'immobility_paralysis' => 'Immobility Paralysis',
-                                //                 'fight_for_survival' => 'Fight for survival',
-                                //                 'surrender' => 'Surrender',
-                                //                 'intervention' => 'Intervention',
-                                //                 'passiveness' => 'Passiveness',
-                                //                 'order' => 'Order',
-                                //                 'disorder' => 'Disorder',
-                                //                 'cooperation' => 'Cooperation',
-                                //                 'hindrance' => 'Hindrance',
-                                //                 'solidarity' => 'Solidarity',
-                                //                 'self_absorption' => 'Self-absorption',
-                                //                 'prayer' => 'Prayer',
-                                //                 'fatalism' => 'Fatalism',
-                                //                 'heroism' => 'Heroism',
-                                //                 'cowardice' => 'Cowardice',
-                                //             ])
-                                //             ->multiple()
-                                //         ,
-                                //     ])
-                                //     ->createItemButtonLabel('Add group'),
 
 
                                 Repeater::make('collective_affects_general')
-                                    ->label('Collective reactions/affects to the event')
+                                    ->label('Collective affects/strategies to the event')
                                     ->schema([
                                         Select::make('group')
                                             ->options([
@@ -3128,46 +1965,7 @@ class TextResource extends Resource
                                             ]),
 
                                         Select::make('attitude')
-                                            ->options([
-                                                'fear' => 'Fear',
-                                                'terror' => 'Terror',
-                                                'panic' => 'Panic',
-                                                'empathy' => 'Empathy',
-                                                'astonishment' => 'Astonishment',
-                                                'anxiety' => 'Anxiety',
-                                                'unease' => 'Unease',
-                                                'discomfort' => 'Discomfort',
-                                                'distress' => 'Distress',
-                                                'malaise' => 'Malaise',
-                                                'rage' => 'Rage',
-                                                'sadness' => 'Sadness',
-                                                'despair' => 'Despair',
-                                                'neurosis' => 'Neurosis',
-                                                'trauma' => 'Trauma',
-                                                'post_traumatic_stress_disorder' => 'Post-traumatic stress disorder',
-                                                'scepticism' => 'Scepticism',
-                                                'doubt' => 'Doubt',
-                                                'resignation' => 'Resignation',
-                                                'survival_instinct' => 'Survival instinct',
-                                                'euphoria' => 'Euphoria',
-                                                'dysphoria' => 'Dysphoria',
-                                                'escape' => 'Escape',
-                                                'immobility_paralysis' => 'Immobility Paralysis',
-                                                'fight_for_survival' => 'Fight for survival',
-                                                'surrender' => 'Surrender',
-                                                'intervention' => 'Intervention',
-                                                'passiveness' => 'Passiveness',
-                                                'order' => 'Order',
-                                                'disorder' => 'Disorder',
-                                                'cooperation' => 'Cooperation',
-                                                'hindrance' => 'Hindrance',
-                                                'solidarity' => 'Solidarity',
-                                                'self_absorption' => 'Self-absorption',
-                                                'prayer' => 'Prayer',
-                                                'fatalism' => 'Fatalism',
-                                                'heroism' => 'Heroism',
-                                                'cowardice' => 'Cowardice',
-                                            ])
+                                            ->options(self::$events)
                                             ->multiple()
                                         ,
                                     ])
@@ -3297,7 +2095,7 @@ class TextResource extends Resource
                     ->schema([
                       
                         Select::make('symbols')
-                            ->label('Motifs, Topoi, Wars, Mythologemes')
+                            ->label('Motifs, Topoi, Mythologemes')
                             ->multiple()
                             ->helperText('related to the entity/phenomenon and to individuals / social groups / societies represented in the literary work')
                             ->options([
@@ -3316,6 +2114,7 @@ class TextResource extends Resource
                                 'thunder' => 'Thunder',
                                 'death' => 'Death',
                                 'ruins' => 'Ruins',
+                                'wars' => 'Wars',
                                 'hyperdisaster' => 'Hyperdisaster',
                                 'nature_machine' => 'Nature-machine',
                                 'ideal_community' => 'Ideal community',
