@@ -116,6 +116,9 @@ public static array $events = [
     'trust' => 'Trust',
     'distrust' => 'Distrust',
     'madness' => 'Madness',
+    'wonder' => 'Wonder',
+    'curiosity' => 'Curiosity',
+    'fascination' => 'Fascination',
 ];
 
     protected static ?string $model = Text::class;
@@ -542,7 +545,9 @@ public static array $events = [
                                                 'repopulation' => 'Repopulation',
                                                 'relocation' => 'Relocation',
                                                 'forced_relocation' => 'Forced Relocation',
-                                                'recovery' => 'Recovery'
+                                                'recovery' => 'Recovery',
+                                                'war' => 'War',
+                                                'conflict' => 'Conflict'
                                             ]
                                             )
                                         ,
@@ -797,6 +802,8 @@ public static array $events = [
                                                 'diseases' => 'Diseases',
                                                 'depopulation_relocation' => 'Depopulation Relocation',
                                                 'forced_relocation' => 'Forced Relocation',
+                                                 'war' => 'War',
+                                                'conflict' => 'Conflict',
                                                 'other' => 'other'
                                             ])
                                         ,
@@ -1294,6 +1301,8 @@ public static array $events = [
                                                 'repopulation' => 'Repopulation',
                                                 'relocation' => 'Relocation',
                                                 'forced_relocation' => 'Forced Relocation',
+                                                 'war' => 'War',
+                                                'conflict' => 'Conflict',
                                                 'recovery' => 'Recovery'
                                             ]
                                             )
@@ -1868,6 +1877,8 @@ public static array $events = [
                                                 'diseases' => 'Diseases',
                                                 'depopulation_relocation' => 'Depopulation Relocation',
                                                 'forced_relocation' => 'Forced Relocation',
+                                                 'war' => 'War',
+                                                'conflict' => 'Conflict',
                                                 'other' => 'other'
                                             ])
                                         ,
@@ -2114,7 +2125,7 @@ public static array $events = [
                                 'thunder' => 'Thunder',
                                 'death' => 'Death',
                                 'ruins' => 'Ruins',
-                                'wars' => 'Wars',
+                                'war' => 'War',
                                 'hyperdisaster' => 'Hyperdisaster',
                                 'nature_machine' => 'Nature-machine',
                                 'ideal_community' => 'Ideal community',
