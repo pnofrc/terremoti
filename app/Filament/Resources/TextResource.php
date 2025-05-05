@@ -140,7 +140,7 @@ public static array $events = [
                 TextInput::make('author')->required(),
                 TextInput::make('publication_year'),
                 TextInput::make('publication_place'),
-                TextInput::make('editor'),
+                TextInput::make('editor')->label('publisher'),
 
                 TextInput::make('collection')->label('Collection'),
                 TextInput::make('magazine')->label('Journal / Magazine'),
@@ -501,18 +501,13 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
-                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
-                                                'physical_landscape_changes' => 'Physical landscape changes',
+                                                'changes_of_the_volcanos_shape' => "Changes of the volcano's shape",
+                                                'landscape_changes' => 'Landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
-                                                'soil_changes' => 'Soil changes',
-                                                'soil_degradation' => 'Soil degradation',
-                                                'pollution' => 'Pollution',
-                                                'sea_pollution' => 'Sea pollution',
-                                                'earthquake' => 'Earthquake',
                                                 'tsunami' => 'Tsunami',
-                                                'other' => 'Other'
+                                                'other' => 'Other',
                                              ]
                                             )
                                         ,
@@ -674,6 +669,7 @@ public static array $events = [
                                         TextInput::make('seismic_fault'),
                                         TextInput::make('country'),
                                         TextInput::make('region'),
+                                        TextInput::make('time'),
                                         TextInput::make('latlng')
                                             ->label('Copy Paste coordinates of the epicentre'),
                                         TextInput::make('impacted')
@@ -767,15 +763,18 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
-                                                'landscape_changes' => 'Landscape changes',
+                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
+                                                'physical_landscape_changes' => 'Physical landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
+                                                'soil_changes' => 'Soil changes',
+                                                'soil_degradation' => 'Soil degradation',
                                                 'pollution' => 'Pollution',
-                                                'chemical_waste' => 'Chemical Waste',
-                                                'nuclear_waste' => 'Nuclear Waste',
+                                                'sea_pollution' => 'Sea pollution',
+                                                'earthquake' => 'Earthquake',
                                                 'tsunami' => 'Tsunami',
-                                                'other' => 'Other',
+                                                'other' => 'Other'
                                             ])
                                         ,
 
@@ -793,18 +792,24 @@ public static array $events = [
                                             ->options([
                                                 'deaths' => 'Deaths',
                                                 'injuries' => 'Injuries',
-                                                'destruction_of_goods_commodities' => 'Destruction of goods/commodities',
+                                                'destruction_of_goods' => 'Destruction of goods/commodities',
+                                                'resource_depletion' => 'Resource depletion',
+                                                'destruction_of_dwellings' => 'Destruction of dwellings',
+                                                'destruction_of_public_buildings' => 'Destruction of public buildings',
                                                 'destruction_of_facilities' => 'Destruction of facilities',
-                                                'social_disruption' => 'Social Disruption',
+                                                'destruction_of_cultural_heritage' => 'Destruction of cultural heritage (materials and sites)',
+                                                'social_disruption' => 'Social disruption',
                                                 'trauma' => 'Trauma',
                                                 'poverty' => 'Poverty',
                                                 'harvest' => 'Harvest',
                                                 'diseases' => 'Diseases',
-                                                'depopulation_relocation' => 'Depopulation Relocation',
+                                                'depopulation' => 'Depopulation',
+                                                'repopulation' => 'Repopulation',
+                                                'relocation' => 'Relocation',
                                                 'forced_relocation' => 'Forced Relocation',
                                                  'war' => 'War',
                                                 'conflict' => 'Conflict',
-                                                'other' => 'other'
+                                                'recovery' => 'Recovery'
                                             ])
                                         ,
 
@@ -856,6 +861,7 @@ public static array $events = [
                                         TextInput::make('base'),
                                         TextInput::make('country'),
                                         TextInput::make('region'),
+                                        TextInput::make('time'),
                                         TextInput::make('latlng')
                                             ->label('Copy Paste coordinates'),
                                     ]),
@@ -1257,18 +1263,13 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
-                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
-                                                'physical_landscape_changes' => 'Physical landscape changes',
+                                               'changes_of_the_volcanos_shape' => "Changes of the volcano's shape",
+                                                'landscape_changes' => 'Landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
-                                                'soil_changes' => 'Soil changes',
-                                                'soil_degradation' => 'Soil degradation',
-                                                'pollution' => 'Pollution',
-                                                'sea_pollution' => 'Sea pollution',
-                                                'earthquake' => 'Earthquake',
                                                 'tsunami' => 'Tsunami',
-                                                'other' => 'Other'
+                                                'other' => 'Other',
                                              ]
                                             )
                                         ,
@@ -1848,13 +1849,18 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
-                                                'changes_of_the_volcanos_shape' => "Changes of the volcano's shape",
-                                                'landscape_changes' => 'Landscape changes',
+                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
+                                                'physical_landscape_changes' => 'Physical landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
+                                                'soil_changes' => 'Soil changes',
+                                                'soil_degradation' => 'Soil degradation',
+                                                'pollution' => 'Pollution',
+                                                'sea_pollution' => 'Sea pollution',
+                                                'earthquake' => 'Earthquake',
                                                 'tsunami' => 'Tsunami',
-                                                'other' => 'Other',
+                                                'other' => 'Other'
                                             ])
                                         ,
 
@@ -1867,19 +1873,25 @@ public static array $events = [
                                         Select::make('impact')
                                             ->options([
                                                 'deaths' => 'Deaths',
-
-                                                'destruction_of_goods_commodities' => 'Destruction of goods/commodities',
+                                                'injuries' => 'Injuries',
+                                                'destruction_of_goods' => 'Destruction of goods/commodities',
+                                                'resource_depletion' => 'Resource depletion',
+                                                'destruction_of_dwellings' => 'Destruction of dwellings',
+                                                'destruction_of_public_buildings' => 'Destruction of public buildings',
                                                 'destruction_of_facilities' => 'Destruction of facilities',
-                                                'social_disruption' => 'Social Disruption',
+                                                'destruction_of_cultural_heritage' => 'Destruction of cultural heritage (materials and sites)',
+                                                'social_disruption' => 'Social disruption',
                                                 'trauma' => 'Trauma',
                                                 'poverty' => 'Poverty',
                                                 'harvest' => 'Harvest',
                                                 'diseases' => 'Diseases',
-                                                'depopulation_relocation' => 'Depopulation Relocation',
+                                                'depopulation' => 'Depopulation',
+                                                'repopulation' => 'Repopulation',
+                                                'relocation' => 'Relocation',
                                                 'forced_relocation' => 'Forced Relocation',
                                                  'war' => 'War',
                                                 'conflict' => 'Conflict',
-                                                'other' => 'other'
+                                                'recovery' => 'Recovery'
                                             ])
                                         ,
 
