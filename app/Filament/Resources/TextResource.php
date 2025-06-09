@@ -501,8 +501,9 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
+                                                   'earthquake' => 'Earthquake',
                                                 'changes_of_the_volcanos_shape' => "Changes of the volcano's shape",
-                                                'landscape_changes' => 'Landscape changes',
+                                                'physical_landscape_changes' => 'Physical landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
@@ -763,7 +764,7 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
-                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
+                                                 // 'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
                                                 'physical_landscape_changes' => 'Physical landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
@@ -772,8 +773,10 @@ public static array $events = [
                                                 'soil_degradation' => 'Soil degradation',
                                                 'pollution' => 'Pollution',
                                                 'sea_pollution' => 'Sea pollution',
-                                                'earthquake' => 'Earthquake',
+                                                // 'earthquake' => 'Earthquake',
                                                 'tsunami' => 'Tsunami',
+                                                'chemical_waste' => 'Chemical Waste',
+                                                'nuclear_waste' => 'Nuclear Waste',
                                                 'other' => 'Other'
                                             ])
                                         ,
@@ -1086,10 +1089,10 @@ public static array $events = [
                                             ],
                                                 'Explosive eruption' => [
                                                       'gases' => 'Gases',
-                                                'ash_rainfall' => 'Ash rainfall',
-                                                'lapilli' => 'Lapilli',
-                                                'volcanic_bombs' => 'Volcanic bombs',
-                                                'pumice_stones'=>'emission of pumice stones'
+                                                        'ash_rainfall' => 'Ash rainfall',
+                                                        'lapilli' => 'Lapilli',
+                                                        'volcanic_bombs' => 'Volcanic bombs',
+                                                        'pumice_stones'=>'emission of pumice stones'
                                                 ],
                                                 'other' => 'other'
                                             ])->reactive(),
@@ -1263,8 +1266,9 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
+                                                'earthquake' => 'Earthquake',
                                                'changes_of_the_volcanos_shape' => "Changes of the volcano's shape",
-                                                'landscape_changes' => 'Landscape changes',
+                                                'physical_landscape_changes' => 'Physical landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
                                                 'atmospheric_changes' => 'Atmospheric changes',
@@ -1849,7 +1853,7 @@ public static array $events = [
                                     ->schema([
                                         Select::make('impact')
                                             ->options([
-                                                'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
+                                                // 'changes_of_volcano_shape' => 'Changes of the volcano’s shape',
                                                 'physical_landscape_changes' => 'Physical landscape changes',
                                                 'destruction_of_plants' => 'Destruction of plants',
                                                 'destruction_of_animal_species' => 'Destruction of animal species',
@@ -1858,8 +1862,10 @@ public static array $events = [
                                                 'soil_degradation' => 'Soil degradation',
                                                 'pollution' => 'Pollution',
                                                 'sea_pollution' => 'Sea pollution',
-                                                'earthquake' => 'Earthquake',
+                                                // 'earthquake' => 'Earthquake',
                                                 'tsunami' => 'Tsunami',
+                                                'chemical_waste' => 'Chemical Waste',
+                                                'nuclear_waste' => 'Nuclear Waste',
                                                 'other' => 'Other'
                                             ])
                                         ,
