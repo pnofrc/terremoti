@@ -48,13 +48,14 @@ class CreateTextsTable extends Migration
             // $table->string('phase_emphisized')->nullable();
             $table->json('keywords')->nullable();
             $table->json('metaphors')->nullable();
-            $table->json('personifications')->nullable();
             $table->json('similes')->nullable();
             $table->longText('substantives')->nullable();
             $table->longText('verbs_agency')->nullable();
             $table->json('punctuation')->nullable();
             $table->json('syntax')->nullable();
             $table->json('morphological_peculiarities')->nullable();
+
+
             // $table->longText('uncommon_typography')->nullable();
             $table->json('symbols')->nullable();
             $table->longText('interpretation')->nullable();

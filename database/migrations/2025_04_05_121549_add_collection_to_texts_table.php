@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('texts', function (Blueprint $table) {
             $table->string('collection')->nullable();
+            $table->json('personification')->nullable();
             $table->string('magazine')->nullable();
         });
     }
@@ -25,6 +26,8 @@ return new class extends Migration
         Schema::table('texts', function (Blueprint $table) {
             $table->dropColumn('collection');
             $table->dropColumn('magazine');
+            $table->dropColumn('personification');
+
         });
     }
 };

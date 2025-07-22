@@ -8,8 +8,8 @@ class Text extends Model
 {
     protected $fillable = [
         'user_id','title', 'author', 'publication_year', 'publication_place', 'editor', 'genre', 'collection', 'magazine',
-        'geological_entities', 'keywords', 'metaphors', 'personifications', 'similes', 'substantives',
-        'verbs_agency', 'punctuation', 'syntax', 'morphological_peculiarities', 'uncommon_typography',
+        'geological_entities', 'keywords', 'metaphors', 'personification', 'similes', 'substantives',
+        'verbs_agency', 'punctuation', 'syntax', 'morphological_peculiarities', 'uncommon_typography', 'phonteics_prosody',
        'symbols', 'interpretation', 'bibliography'
     ];
 
@@ -55,6 +55,7 @@ class Text extends Model
     protected $casts = [
         'genre' => 'array',
         'geological_entities' => 'array',
+        
         // 'degree_anthropization' => 'array',
         // 'place' => 'array',
         // 'typology' => 'array',
@@ -73,13 +74,14 @@ class Text extends Model
         // 'collective_affects' => 'array',
         'keywords' => 'array',
         'metaphors' => 'array',
-        'personifications' => 'array',
+        'personification' => 'array',
         'similes' => 'array',
         'bibliography' =>  'array',
         'symbols' =>  'array',
        'morphological_peculiarities' =>  'array',
        'syntax' =>  'array',
        'punctuation'=>  'array',
+       'phonteics_prosody'=>  'array',
     ];
 
     public function user()
