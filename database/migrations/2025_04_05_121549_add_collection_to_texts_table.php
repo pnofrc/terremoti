@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('texts', function (Blueprint $table) {
             $table->string('collection')->nullable();
-            $table->json('personification')->nullable();
             $table->string('magazine')->nullable();
+            $table->json('personification')->nullable();
         });
     }
 

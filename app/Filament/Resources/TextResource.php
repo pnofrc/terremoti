@@ -70,7 +70,15 @@ class TextResource extends Resource
     'curiosity'=> 'Curiosity', 
     'fascination'=> 'Fascination',
     'loss_of_consciousness' => 'Loss of consciousness',
-];
+
+    'awe' => 'Awe',
+    'superstition' => 'Superstition',
+    'underestimation' => 'Underestimation',
+    'rationality' => 'Rationality',
+    'faith_in_risk_prediction_systems' => 'Faith in risk prediction systems',
+
+
+   ];
 
 public static array $events = [
     'escape' => 'Escape',
@@ -119,6 +127,18 @@ public static array $events = [
     'wonder' => 'Wonder',
     'curiosity' => 'Curiosity',
     'fascination' => 'Fascination',
+
+    'helplessness' => 'Helplessness',
+    'pragmatism' => 'Pragmatism',
+    'concealment_of_information' => 'Concealment of information',
+    'sharing_of_information' => 'Sharing of information',
+    'underestimation' => 'Underestimation',
+    'naivety' => 'Naivety',
+    'irony' => 'Irony',
+    'rationality' => 'Rationality',
+    'irrationality' => 'Irrationality',
+    'alarm' => 'Alarm',
+
 ];
 
     protected static ?string $model = Text::class;
@@ -178,7 +198,17 @@ public static array $events = [
 
                             'non-fiction' => 'Non-fiction',
                             'essay'=>'Essay',
-                            'letter'=>'Letter'
+                            'letter'=>'Letter',
+
+
+                            'sci-fi' => 'Sci-fi',
+                            'dystopian' => 'Dystopian',
+                            'thriller' => 'Thriller',
+                            'mystery' => 'Mystery',
+                            'first-person-account' => 'First-person account',
+                            'autobiography' => 'Autobiography',
+                            'article' => 'Article',
+                            'biofiction' => 'Biofiction',
 
                         ],
                         'POETRY' => [
@@ -1018,6 +1048,17 @@ public static array $events = [
                                                 'eccentric' => 'Eccentric People',
                                                 'magician' => 'People with magical power',
                                                 'erudite' => 'Erudite people',
+
+                                                'nonhuman-beings' => 'Nonhuman beings',
+                                                'animals' => 'Animals',
+                                                'volcanologists' => 'Volcanologists',
+                                                'geologists' => 'Geologists',
+                                                'journalists' => 'Journalists',
+                                                'the-media' => 'The media',
+                                                'civil-defense' => 'Civil defense',
+                                                'rescuers' => 'Rescuers',
+                                                'businesspeople' => 'Businesspeople',
+                                                'tourists' => 'Tourists',
                                                 
                                             ]),
 
@@ -1250,7 +1291,18 @@ public static array $events = [
                                                 'plebeians' => 'Plebeians',
                                                 'eccentric' => 'Eccentric People',
                                                 'magician' => 'People with magical power',
-                                                'erudite' => 'Erudite people'
+                                                'erudite' => 'Erudite people',
+
+                                                'nonhuman-beings' => 'Nonhuman beings',
+                                            'animals' => 'Animals',
+                                            'volcanologists' => 'Volcanologists',
+                                            'geologists' => 'Geologists',
+                                            'journalists' => 'Journalists',
+                                            'the-media' => 'The media',
+                                            'civil-defense' => 'Civil defense',
+                                            'rescuers' => 'Rescuers',
+                                            'businesspeople' => 'Businesspeople',
+                                            'tourists' => 'Tourists',
                                             ]),
 
                                         Select::make('attitude')
@@ -1399,6 +1451,7 @@ public static array $events = [
                                                 'erudite' => 'Erudite people',
                                                 'patricians' => 'Patricians',
                                                 'plebeians' => 'Plebeians',
+
 
                                             ]),
 
@@ -1617,7 +1670,18 @@ public static array $events = [
                                                 'plebeians' => 'Plebeians',
                                                 'eccentric' => 'Eccentric People',
                                                 'magician' => 'People with magical power',
-                                                'erudite' => 'Erudite people'
+                                                'erudite' => 'Erudite people',
+
+                                                'nonhuman-beings' => 'Nonhuman beings',
+                                                'animals' => 'Animals',
+                                                'volcanologists' => 'Volcanologists',
+                                                'geologists' => 'Geologists',
+                                                'journalists' => 'Journalists',
+                                                'the-media' => 'The media',
+                                                'civil-defense' => 'Civil defense',
+                                                'rescuers' => 'Rescuers',
+                                                'businesspeople' => 'Businesspeople',
+                                                'tourists' => 'Tourists',
                                             ]),
 
                                         Select::make('attitude')
@@ -1834,7 +1898,18 @@ public static array $events = [
                                                 'plebeians' => 'Plebeians',
                                                 'eccentric' => 'Eccentric People',
                                                 'magician' => 'People with magical power',
-                                                'erudite' => 'Erudite people'
+                                                'erudite' => 'Erudite people',
+
+                                                'nonhuman-beings' => 'Nonhuman beings',
+                                                'animals' => 'Animals',
+                                                'volcanologists' => 'Volcanologists',
+                                                'geologists' => 'Geologists',
+                                                'journalists' => 'Journalists',
+                                                'the-media' => 'The media',
+                                                'civil-defense' => 'Civil defense',
+                                                'rescuers' => 'Rescuers',
+                                                'businesspeople' => 'Businesspeople',
+                                                'tourists' => 'Tourists',
                                             ]),
 
                                         Select::make('attitude')
@@ -2087,7 +2162,7 @@ public static array $events = [
                             'parataxis' => 'Parataxis',
                             'hypotaxis' => 'Hypotaxis',
                             'simple_sentences' => 'Simple sentences',
-                            'complex_verbal_phrases' => 'Complex verbal phrases',
+                            'complex_verbal_phrases' => 'Complex verb phrases',
                             'complex_noun_phrases' => 'Complex noun phrases',
                             'unconventional_position' => 'Unconventional position of phrases in sentence',
                             'high_frequency_connectives' => 'High frequency of textual connectives (coordinating conjunctions, adverbs)',
@@ -2156,7 +2231,18 @@ public static array $events = [
                                 'violation_of_laws_of_nature' => 'Violation of the laws of Nature',
                                 'superstition' => 'Superstition',
                                 'prophecy' => 'Prophecy',
-                                'violation_of_taboos' => 'Violation of taboos'
+                                'violation_of_taboos' => 'Violation of taboos',
+
+                                'corrupted_civilisation' => 'Corrupted civilisation',
+                                'hubris' => 'Hubris',
+                                'the_downfall_of_society' => 'The downfall of society',
+                                'the_end_of_the_world' => 'The end of the world',
+                                'evil' => 'Evil',
+                                'mythical_creatures' => 'Mythical creatures',
+                                'magics' => 'Magics',
+                                'curse' => 'Curse',
+                                'supernatural' => 'Supernatural',
+
                             ]),
                             
                     ])->columns(1),
