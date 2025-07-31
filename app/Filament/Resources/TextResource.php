@@ -1452,7 +1452,16 @@ public static array $events = [
                                                 'patricians' => 'Patricians',
                                                 'plebeians' => 'Plebeians',
 
-
+                                                'nonhuman-beings' => 'Nonhuman beings',
+                                                'animals' => 'Animals',
+                                                'volcanologists' => 'Volcanologists',
+                                                'geologists' => 'Geologists',
+                                                'journalists' => 'Journalists',
+                                                'the-media' => 'The media',
+                                                'civil-defense' => 'Civil defense',
+                                                'rescuers' => 'Rescuers',
+                                                'businesspeople' => 'Businesspeople',
+                                                'tourists' => 'Tourists',
                                             ]),
 
                                         Select::make('attitude')
@@ -2065,6 +2074,17 @@ public static array $events = [
                                                 'erudite' => 'Erudite people',
                                                 'patricians' => 'Patricians',
                                                 'plebeians' => 'Plebeians',
+
+                                                'nonhuman-beings' => 'Nonhuman beings',
+                                                'animals' => 'Animals',
+                                                'volcanologists' => 'Volcanologists',
+                                                'geologists' => 'Geologists',
+                                                'journalists' => 'Journalists',
+                                                'the-media' => 'The media',
+                                                'civil-defense' => 'Civil defense',
+                                                'rescuers' => 'Rescuers',
+                                                'businesspeople' => 'Businesspeople',
+                                                'tourists' => 'Tourists',
 
                                             ]),
 
