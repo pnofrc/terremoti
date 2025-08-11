@@ -212,6 +212,7 @@ public static array $events = [
 
                         ],
                         'POETRY' => [
+                            'poetry' => 'poetry',
                             'sonnet' => 'Sonnet',
                             'lyric' => 'Lyric',
                             'ballad' => 'Ballad',
